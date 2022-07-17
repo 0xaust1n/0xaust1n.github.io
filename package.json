@@ -5,9 +5,9 @@
   "scripts": {
     "build": "hexo generate",
     "clean": "hexo clean",
-    "deploy": "hexo deploy",
+    "deploy": "hexo clean && hexo deploy",
     "dev": "hexo server",
-    "themes" : "git submodule update --remote"
+    "themes": "git submodule update --remote"
   },
   "hexo": {
     "version": "6.2.0"
