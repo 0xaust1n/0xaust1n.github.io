@@ -13,7 +13,7 @@ timezone: ""
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://github.com/0xaust1n/blog
+url: https://0xaust1n.github.io/
 permalink: :title/
 permalink_defaults:
 pretty_urls:
@@ -103,6 +103,6 @@ theme: stun
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/0xaust1n/blog
-  # example, https://github.com/hexojs/hexojs.github.io
-  branch: release
+  message: "ci: blogs update {{ now('YYYY-MM-DD HH:mm:ss') }}"
+  repo: https://github.com/0xaust1n/0xaust1n.github.io
+  branch: gh-pages
