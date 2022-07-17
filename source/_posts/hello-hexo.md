@@ -1,7 +1,7 @@
 ---
 title: Hello Hexo
 categories:
-  - [Life]
+  - [Life,Gibberish]
 permalink: intro/
 ---
 ## Intro  
@@ -13,7 +13,7 @@ I am so done with the `CSS` .
 ![image](https://media2.giphy.com/media/13FrpeVH09Zrb2/giphy.gif?cid=ecf05e47i6nerqacg88ux9zpjknvwx9m7shcaoo00kmjonqz&rid=giphy.gif&ct=g)
 Since I'm not the Front-end engineer anymore.  
 ~~Absolutely no because I'm not dominating the CSS~~  
-I will spend more time improving my back-end skill.  
+I will spend more time improving my `Back-end` skill.  
 
 ## Purpose
 - Trynna improve my English writing skill.  
@@ -23,7 +23,7 @@ I will spend more time improving my back-end skill.
 > All the human are forgetful  
 - Sharing my research?  
 > Teaching is the only way to master what you had learned.  
-> According to `Cone of Learning`  
+> According to Cone of Learning  
 
 
 ## Disclaimer
