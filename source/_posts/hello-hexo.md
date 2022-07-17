@@ -1,5 +1,6 @@
 ---
 title: Hello Hexo
+date: 2022-07-16 17:40:40
 categories:
   - [Life,Gibberish]
 permalink: intro/
