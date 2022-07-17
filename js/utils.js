@@ -65,7 +65,8 @@ Stun.utils = Stun.$u = {
   hasMobileUA: function () {
     var nav = window.navigator
     var ua = nav.userAgent
-    var pa = /iPad|iPhone|Android|Opera Mini|BlackBerry|webOS|UCWEB|Blazer|PSP|IEMobile|Symbian/g
+    var pa =
+      /iPad|iPhone|Android|Opera Mini|BlackBerry|webOS|UCWEB|Blazer|PSP|IEMobile|Symbian/g
     return pa.test(ua)
   },
   isTablet: function () {
@@ -82,7 +83,7 @@ Stun.utils = Stun.$u = {
     return !this.isTablet() && !this.isMobile()
   },
   Cookies: function () {
-    function extend () {
+    function extend() {
       var i = 0
       var result = {}
       for (; i < arguments.length; i++) {
@@ -94,16 +95,16 @@ Stun.utils = Stun.$u = {
       return result
     }
 
-    function init (converter) {
-      function api (key, value, attributes) {
+    function init(converter) {
+      function api(key, value, attributes) {
         var result
-        if (typeof document === 'undefined') {
+        if (typeof document === "undefined") {
           return
         }
         // Write
         if (arguments.length > 1) {
-          attributes = extend({ path: '/' }, api.defaults, attributes)
-          if (typeof attributes.expires === 'number') {
+          attributes = extend({ path: "/" }, api.defaults, attributes)
+          if (typeof attributes.expires === "number") {
             var expires = new Date()
             expires.setMilliseconds(
               expires.getMilliseconds() + attributes.expires * 864e5
@@ -113,7 +114,7 @@ Stun.utils = Stun.$u = {
           // We're using "expires" because "max-age" is not supported by IE
           attributes.expires = attributes.expires
             ? attributes.expires.toUTCString()
-            : ''
+            : ""
           try {
             result = JSON.stringify(value)
             if (/^[{[]/.test(result)) {
@@ -134,18 +135,18 @@ Stun.utils = Stun.$u = {
           key = key.replace(/%(23|24|26|2B|5E|60|7C)/g, decodeURIComponent)
           key = key.replace(/[()]/g, escape)
 
-          var stringifiedAttributes = ''
+          var stringifiedAttributes = ""
           for (var attributeName in attributes) {
             if (!attributes[attributeName]) {
               continue
             }
-            stringifiedAttributes += '; ' + attributeName
+            stringifiedAttributes += "; " + attributeName
             if (attributes[attributeName] === true) {
               continue
             }
-            stringifiedAttributes += '=' + attributes[attributeName]
+            stringifiedAttributes += "=" + attributes[attributeName]
           }
-          return (document.cookie = key + '=' + value + stringifiedAttributes)
+          return (document.cookie = key + "=" + value + stringifiedAttributes)
         }
         // Read
         if (!key) {
@@ -154,13 +155,13 @@ Stun.utils = Stun.$u = {
         // To prevent the for loop in the first place assign an empty array
         // in case there are no cookies at all. Also prevents odd result when
         // calling "get()"
-        var cookies = document.cookie ? document.cookie.split('; ') : []
+        var cookies = document.cookie ? document.cookie.split("; ") : []
         var rdecode = /(%[0-9A-Z]{2})+/g
         var i = 0
 
         for (; i < cookies.length; i++) {
-          var parts = cookies[i].split('=')
-          var cookie = parts.slice(1).join('=')
+          var parts = cookies[i].split("=")
+          var cookie = parts.slice(1).join("=")
 
           if (cookie.charAt(0) === '"') {
             cookie = cookie.slice(1, -1)
@@ -200,7 +201,7 @@ Stun.utils = Stun.$u = {
       }
       api.defaults = {}
       api.remove = function (key, attributes) {
-        api(key, '', extend(attributes, { expires: -1 }))
+        api(key, "", extend(attributes, { expires: -1 }))
       }
       api.withConverter = init
       return api
@@ -208,25 +209,13 @@ Stun.utils = Stun.$u = {
     return init(function () {})
   },
   showThemeInConsole: function () {
-    var stunInfo = '主题不错？⭐star 支持一下 ->'
-    var stunURL = 'https://github.com/liuyib/hexo-theme-stun'
-    var stunNameStr =
-      '\n\n      ___          ___            ___            ___      \n     /\\  \\        /\\  \\          /\\__\\          /\\__\\     \n    /::\\  \\       \\:\\  \\        /:/  /         /::|  |    \n   /:/\\ \\  \\       \\:\\  \\      /:/  /         /:|:|  |    \n  _\\:\\ \\ \\  \\      /::\\  \\    /:/  /  ___    /:/|:|  |__  \n /\\ \\:\\ \\ \\__\\    /:/\\:\\__\\  /:/__/  /\\__\\  /:/ |:| /\\__\\ \n \\:\\ \\:\\ \\/__/   /:/  \\/__/  \\:\\  \\ /:/  /  \\/__|:|/:/  / \n  \\:\\ \\:\\__\\    /:/  /        \\:\\  /:/  /       |:/:/  /  \n   \\:\\/:/  /    \\/__/          \\:\\/:/  /        |::/  /   \n    \\::/  /                     \\::/  /         /:/  /    \n     \\/__/                       \\/__/          \\/__/     \n                                                          \n'
-    var stunInfoStyle =
-      'background-color: #49b1f5; color: #fff; padding: 8px; font-size: 14px;'
-    var stunURLStyle =
-      'background-color: #ffbca2; padding: 8px; font-size: 14px;'
-    var stunNameStyle = 'background-color: #eaf8ff;'
+    var stunInfo = "主题不错？"
+    var stunURL = "⭐star 支持一下 ->https://github.com/liuyib/hexo-theme-stun"
+    var austinCustom = "Austin:別在偷看我的Console了 你這個小壞壞"
 
-    console.log(
-      '%c%s%c%s%c%s',
-      stunInfoStyle,
-      stunInfo,
-      stunURLStyle,
-      stunURL,
-      stunNameStyle,
-      stunNameStr
-    )
+    console.log(stunInfo)
+    console.log(stunURL)
+    console.log(austinCustom)
   },
   /**
    * Change the event code to keyCode.
@@ -248,8 +237,8 @@ Stun.utils = Stun.$u = {
    * @param {Number} delay Message stay time (unit is 's', default 5s).
    */
   popAlert: function (status, text, delay) {
-    if ($('.stun-message').length !== 0) {
-      $('.stun-message').remove()
+    if ($(".stun-message").length !== 0) {
+      $(".stun-message").remove()
     }
 
     var $alert = $(
@@ -257,22 +246,22 @@ Stun.utils = Stun.$u = {
         `<div class="stun-alert stun-alert-${status}">` +
         `<i class="stun-alert-icon ${CONFIG.fontIcon.prompt[status]}"></i>` +
         `<span class="stun-alert-description">${text}</span>` +
-        '</div>' +
-        '</div>'
+        "</div>" +
+        "</div>"
     )
 
-    $('body').append($alert)
+    $("body").append($alert)
     $(document).ready(function () {
-      $('.stun-alert')
-        .velocity('stop')
-        .velocity('transition.slideDownBigIn', {
+      $(".stun-alert")
+        .velocity("stop")
+        .velocity("transition.slideDownBigIn", {
           duration: 300
         })
-        .velocity('reverse', {
+        .velocity("reverse", {
           delay: delay * 1000 || 5000,
           duration: 260,
           complete: function () {
-            $('.stun-alert').css('display', 'none')
+            $(".stun-alert").css("display", "none")
           }
         })
     })
@@ -291,17 +280,17 @@ Stun.utils = Stun.$u = {
       selection.addRange(range)
 
       var text = selection.toString()
-      var input = document.createElement('input')
+      var input = document.createElement("input")
       // Create a temporary input to make the
       // execCommand command take effect.
-      input.style.display = 'none'
-      input.setAttribute('readonly', 'readonly')
-      input.setAttribute('value', text)
+      input.style.display = "none"
+      input.setAttribute("readonly", "readonly")
+      input.setAttribute("value", text)
       document.body.appendChild(input)
       input.setSelectionRange(0, -1)
 
-      if (document.execCommand('copy')) {
-        document.execCommand('copy')
+      if (document.execCommand("copy")) {
+        document.execCommand("copy")
         document.body.removeChild(input)
         return true
       }
@@ -312,14 +301,14 @@ Stun.utils = Stun.$u = {
   },
   // Wrap images with fancybox support.
   wrapImageWithFancyBox: function () {
-    $('.content img')
-      .not(':hidden')
+    $(".content img")
+      .not(":hidden")
       .each(function () {
         var $img = $(this)
-        var imgTitle = $img.attr('title') || $img.attr('alt')
-        var $imgWrap = $img.parent('a')
-        var imgSource = ['data-src', 'data-original', 'src']
-        var imgSrc = ''
+        var imgTitle = $img.attr("title") || $img.attr("alt")
+        var $imgWrap = $img.parent("a")
+        var imgSource = ["data-src", "data-original", "src"]
+        var imgSrc = ""
 
         if (!$imgWrap[0]) {
           for (var i = 0; i < imgSource.length; i++) {
@@ -330,30 +319,30 @@ Stun.utils = Stun.$u = {
           }
           $imgWrap = $img
             .wrap(`<a class="fancybox" href="${imgSrc}"></a>`)
-            .parent('a')
-          if ($img.is('.gallery img')) {
-            $imgWrap.attr('data-fancybox', 'gallery')
+            .parent("a")
+          if ($img.is(".gallery img")) {
+            $imgWrap.attr("data-fancybox", "gallery")
           } else {
-            $imgWrap.attr('data-fancybox', 'default')
+            $imgWrap.attr("data-fancybox", "default")
           }
         }
         if (imgTitle) {
-          $imgWrap.attr('title', imgTitle).attr('data-caption', imgTitle)
+          $imgWrap.attr("title", imgTitle).attr("data-caption", imgTitle)
         }
       })
 
     $().fancybox({
-      selector: '[data-fancybox]',
+      selector: "[data-fancybox]",
       loop: true,
-      transitionEffect: 'slide',
+      transitionEffect: "slide",
       hash: false,
       buttons: [
-        'share',
-        'slideShow',
-        'fullScreen',
-        'download',
-        'thumbs',
-        'close'
+        "share",
+        "slideShow",
+        "fullScreen",
+        "download",
+        "thumbs",
+        "close"
       ]
     })
   },
@@ -362,10 +351,10 @@ Stun.utils = Stun.$u = {
     var gConfig = CONFIG.galleryWaterfall
     var colWidth = parseInt(gConfig.colWidth)
     var colGapX = parseInt(gConfig.gapX)
-    var GALLERY_IMG_SELECTOR = '.gallery img'
+    var GALLERY_IMG_SELECTOR = ".gallery img"
 
     this.waitAllImageLoad(GALLERY_IMG_SELECTOR, function () {
-      $('.gallery').masonry({
+      $(".gallery").masonry({
         itemSelector: GALLERY_IMG_SELECTOR,
         columnWidth: colWidth,
         percentPosition: true,
@@ -376,7 +365,7 @@ Stun.utils = Stun.$u = {
   },
   // Lazy load the images of post.
   lazyLoadImage: function () {
-    $('img.lazyload').lazyload()
+    $("img.lazyload").lazyload()
   },
   // Add a mark icon to the link with `target="_blank"` attribute.
   addIconToExternalLink: function (container) {
@@ -388,31 +377,31 @@ Stun.utils = Stun.$u = {
     var $icon = $(
       '<span class="exturl__icon">' +
         `<i class="${CONFIG.externalLink.icon.name}"></i>` +
-        '</span>'
+        "</span>"
     )
 
     $(container)
       .find('a[target="_blank"]')
-      .addClass('exturl__link')
+      .addClass("exturl__link")
       .wrap($wrapper)
-      .parent('.exturl')
+      .parent(".exturl")
       .append($icon)
   },
   // Switch to the prev / next post by shortcuts.
   registerSwitchPost: function () {
-    var keyLeft = this.codeToKeyCode('ArrowLeft')
-    var keyRight = this.codeToKeyCode('ArrowRight')
+    var keyLeft = this.codeToKeyCode("ArrowLeft")
+    var keyRight = this.codeToKeyCode("ArrowRight")
 
-    $(document).on('keydown', function (e) {
+    $(document).on("keydown", function (e) {
       var isPrev = e.keyCode === keyLeft
       var isNext = e.keyCode === keyRight
 
       if (e.ctrlKey) {
         if (isPrev) {
-          var prevElem = $('.paginator-prev a')[0]
+          var prevElem = $(".paginator-prev a")[0]
           prevElem && prevElem.click()
         } else if (isNext) {
-          var nextElem = $('.paginator-next a')[0]
+          var nextElem = $(".paginator-next a")[0]
           nextElem && nextElem.click()
         }
       }
@@ -420,12 +409,12 @@ Stun.utils = Stun.$u = {
   },
   // Show / Hide the reward QR.
   registerShowReward: function () {
-    $('.reward-button').on('click', function () {
-      var $container = $('.reward-qrcode')
-      if ($container.is(':visible')) {
-        $container.css('display', 'none')
+    $(".reward-button").on("click", function () {
+      var $container = $(".reward-qrcode")
+      if ($container.is(":visible")) {
+        $container.css("display", "none")
       } else {
-        $container.velocity('stop').velocity('transition.slideDownIn', {
+        $container.velocity("stop").velocity("transition.slideDownIn", {
           duration: 300
         })
       }
@@ -433,30 +422,28 @@ Stun.utils = Stun.$u = {
   },
   // Click to zoom in image, without fancybox.
   registerZoomImage: function () {
-    $('#content-wrap img')
-      .not(':hidden')
+    $("#content-wrap img")
+      .not(":hidden")
       .each(function () {
-        if ($(this).attr('data-zoom') === 'none') return
-        $(this).addClass('zoomimg')
+        if ($(this).attr("data-zoom") === "none") return
+        $(this).addClass("zoomimg")
       })
 
     var $imgMask = $('<div class="zoomimg-mask"></div>')
     var $imgClone = null
     var isZoom = false
 
-    $(window).on('scroll', closeZoom)
-    $(document).on('click', closeZoom)
+    $(window).on("scroll", closeZoom)
+    $(document).on("click", closeZoom)
 
-    $('.zoomimg').on('click', function (e) {
+    $(".zoomimg").on("click", function (e) {
       e.stopPropagation()
       if (isZoom) {
         closeZoom()
         return
       }
       isZoom = true
-      $imgClone = $(this)
-        .clone()
-        .addClass('zoomimg-clone')
+      $imgClone = $(this).clone().addClass("zoomimg-clone")
 
       var SIDE_GAP = parseInt(CONFIG.zoomImage.gapAside || 20)
       var imgRect = this.getBoundingClientRect()
@@ -474,10 +461,8 @@ Stun.utils = Stun.$u = {
       var translateX = winW / 2 - (imgRect.x + imgOuterW / 2) + SIDE_GAP
       var translateY = winH / 2 - (imgRect.y + imgOuterH / 2) + SIDE_GAP
 
-      $(this).addClass('zoomimg--hide')
-      $('body')
-        .append($imgMask)
-        .append($imgClone)
+      $(this).addClass("zoomimg--hide")
+      $("body").append($imgMask).append($imgClone)
       $imgMask.velocity({
         opacity: 1
       })
@@ -497,18 +482,18 @@ Stun.utils = Stun.$u = {
       )
     })
 
-    function closeZoom () {
+    function closeZoom() {
       if (!isZoom) {
         return
       }
 
       isZoom = false
-      $imgClone.velocity('reverse')
-      $imgMask.velocity('reverse', {
+      $imgClone.velocity("reverse")
+      $imgMask.velocity("reverse", {
         complete: function () {
           $imgMask.remove()
           $imgClone.remove()
-          $('.zoomimg').removeClass('zoomimg--hide')
+          $(".zoomimg").removeClass("zoomimg--hide")
         }
       })
     }
@@ -518,20 +503,20 @@ Stun.utils = Stun.$u = {
    * @param {string} type The type of header. value: 'carbon' | null.
    */
   addCodeHeader: function (type) {
-    $('figure.highlight').each(function () {
-      if (!$(this).find('figcaption')[0]) {
-        var content = ''
+    $("figure.highlight").each(function () {
+      if (!$(this).find("figcaption")[0]) {
+        var content = ""
         if (!type) {
-          var CODEBLOCK_CLASS_NAME = 'highlight'
+          var CODEBLOCK_CLASS_NAME = "highlight"
           var lang = $(this)
-            .attr('class')
+            .attr("class")
             .split(/\s/)
             .filter(function (e) {
               return e !== CODEBLOCK_CLASS_NAME
             })
 
           content += `<div class="custom-lang">${lang}</div>`
-        } else if (type === 'carbon') {
+        } else if (type === "carbon") {
           content += `
             <div class="custom-carbon">
               <div class="custom-carbon-dot custom-carbon-dot--red"></div>
@@ -542,36 +527,32 @@ Stun.utils = Stun.$u = {
         }
 
         $(`<figcaption class="custom">${content}</figcaption>`).insertBefore(
-          $(this)
-            .children()
-            .first()
+          $(this).children().first()
         )
       }
     })
   },
   addCopyButton: function (type) {
-    var btnContainer = '.post-copyright,'
+    var btnContainer = ".post-copyright,"
     var $copyIcon = $(
       `<div class="copy-button" data-popover="${CONFIG.prompt.copyButton}" data-popover-pos="up">` +
         `<i class="${CONFIG.fontIcon.copyBtn}"></i>` +
-        '</div>'
+        "</div>"
     )
 
-    if (type === 'simple' || type === 'carbon') {
+    if (type === "simple" || type === "carbon") {
       btnContainer += '.highlight figcaption:not(".custom")'
     } else {
-      btnContainer += '.highlight figcaption'
+      btnContainer += ".highlight figcaption"
     }
     // Add a copy button to the selected elements.
     $(btnContainer).append($copyIcon)
   },
   registerCopyEvent: function () {
-    $('.copy-button').on('click', function () {
+    $(".copy-button").on("click", function () {
       var container = null
       // Select the container of code block.
-      var codeContainer = $(this)
-        .parents('figure.highlight')
-        .find('td.code')[0]
+      var codeContainer = $(this).parents("figure.highlight").find("td.code")[0]
 
       if (codeContainer) {
         container = codeContainer
@@ -580,9 +561,9 @@ Stun.utils = Stun.$u = {
         container = $(this).parent()[0]
       }
       if (Stun.utils.copyText(container)) {
-        Stun.utils.popAlert('success', CONFIG.prompt.copySuccess)
+        Stun.utils.popAlert("success", CONFIG.prompt.copySuccess)
       } else {
-        Stun.utils.popAlert('error', CONFIG.prompt.copyError)
+        Stun.utils.popAlert("error", CONFIG.prompt.copyError)
       }
     })
   },
@@ -595,7 +576,7 @@ Stun.utils = Stun.$u = {
     var imgDefereds = []
     $(selector).each(function () {
       var dfd = $.Deferred()
-      $(this).bind('load', function () {
+      $(this).bind("load", function () {
         dfd.resolve()
       })
 
