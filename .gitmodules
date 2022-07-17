@@ -1,0 +1,4 @@
+[submodule "theme/stun"]
+	path = theme/stun
+	url = https://github.com/0xaust1n/hexo-theme-stun.git
+	branch = dist
