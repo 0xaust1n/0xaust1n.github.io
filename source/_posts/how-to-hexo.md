@@ -1,5 +1,5 @@
 ---
-title: The details that didn't in the Hexo's docs
+title: The details that didn't mention in Hexo's docs
 date: 2022-07-17 17:40:40
 categories:
   - [Hexo]
@@ -44,7 +44,7 @@ But If you want to modify the cloning code e.g.： configs, code, etc...
 You need to folk the repo, then use the folk repo URL as your sub-module.  
   
 Every time the sub-module has been updated,  
-you need to use the command to update the ref for pointing the latest commit of the sub-module.
+you need to use the command to update the ref for pointing to the latest commit of the sub-module.
 ```bash
 git submodule update --remote
 ```
@@ -71,7 +71,7 @@ Result  (Clean af)
 ![commit](../assets/how-to-hexo/1.png)
 
 ## End
-By understanding above issue, building Hexo blog is ezpz.  
+By understanding the above issues, building the Hexo blog is ezpz.  
 You can do the most custom that you want.
 Enjoy.  
-If you got any questions feel free to email me.
+If you got further questions feel free to email me.
