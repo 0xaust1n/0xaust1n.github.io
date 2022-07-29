@@ -16,7 +16,7 @@ And Keep you lazy.
 
 # Prepare
 - [Github CLI](https://cli.github.com/)
-- Notepad 
+- Any Text Editor 
 - Nice terminal
 
 
@@ -66,10 +66,13 @@ Your `.gitconfig` will follow by your working directory.
 # Authentication
 If you want to push your code, you still need the authentication for Github.  
 Here comes the Github-CLI.  
-Pop up your terminal Again, and change the directory to your `root/.config/gh` (macOS/Linux)  
+Pop up your terminal Again, and change the directory to your `root/.config/gh`  
+
+> If you're windows user, please google where is your github-cli config sit at.  
+
 (If not you create a folder file named `gh`)  
 Then you need to touch (create) four files in gh directory.  
-(If files are existed, you should modify the content)
+(If files exist, you should modify the content)
 ```bash
 touch config.yml
 touch hosts.yml
@@ -90,6 +93,8 @@ Put the below content into the `host.yml.<suffix>` with suffix.
 Each suffix stands for a different account.  
 [Docs for GitHub personal token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 
+> Remeber check **all** the checkbox when you creating the Github personal token  
+
 ```host.yml.personal
 github.com:
     oauth_token: <github-peronsal-token>
@@ -99,12 +104,23 @@ github.com:
 > Please remind there's a space after colon  
 > Otherwise it won't work  
 
-Then you can switch the account by using the command below  
-If the terminal shows the below info  
->github.com
-  ✓ Logged in to github.com as 0xaust1n (oauth_token)
-  ✓ Git operations for github.com configured to use ssh protocol.
-  ✓ Token: *******************
 
-This means all the config are correct.
-You can switch the account by using a different alias.
+Then you can switch the account by using the command below:  
+
+```bash
+gh personal
+```
+If the terminal shows the below info:  
+
+>github.com  
+>  ✓ Logged in to github.com as 0xaust1n (oauth_token)  
+>  ✓ Git operations for github.com configured to use ssh protocol.  
+>  ✓ Token: *******************  
+> 
+Then set up the GitHub-CLI for authentication by using the command below:  
+
+```bash
+gh auth setup-git
+```
+
+Now it's work. Enjoy
