@@ -1,6 +1,6 @@
 ---
-title: Multi-GitHub accounts through terminal
-date: 2022-07-27 10:43:40
+title: Multi-Github accounts through terminal
+date: 2022-07-31 03:17:40
 categories:
   - [Tech, Git]
 ---
@@ -13,6 +13,7 @@ It's kinda annoying that you need to set the config whenever you create a new re
 So, Let's fix it,  
 And Keep you lazy.
 
+<!-- more -->
 
 # Prepare
 - [Github CLI](https://cli.github.com/)
