@@ -125,3 +125,79 @@ gh auth setup-git
 ```
 
 Now it's work. Enjoy
+
+
+## TLDR version
+
+
+1.  Edit `.gitconfig`
+```bash
+code ~/.gitconfig
+```
+Add below content
+
+```
+# Each account must using different path
+[includeIf "gitdir:<your-personal-path>"]
+  path = ~/.gitconfig.<suffix>
+[includeIf "gitdir:<your-work-path>"]
+  path = ~/.gitconfig.<suffix>
+[core]
+	ignorecase = true
+[pager]
+	branch = false
+[pull]
+	rebase = true
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+```
+
+2. Create config for all suffix  
+> e.g.: I got work and personal suffix  
+> thus I need to create  `.gitconfig.work` and `.gitconfig.personal`  
+
+Add below content into each config file  
+```
+[user]
+	name = <accountName>
+	email = <email>
+```
+
+3. Install gh cli
+```
+# bash
+brew install gh
+```
+
+4. Add config for gh cli
+```
+# path of location (If path does not exist, please make the dir)
+cd ~.config/gh
+touch config.yml
+touch hosts.yml
+touch hosts.yml.<suffix>
+... 
+
+```
+
+5. Put the below content into the `config.yml`
+```config.yml
+git_protocol: ssh
+aliases:
+  <suffix>: "!cp ~/.config/gh/hosts.yml.<suffix> ~/.config/gh/hosts.yml && gh auth status"
+  <suffix>: "!cp ~/.config/gh/hosts.yml.<suffix> ~/.config/gh/hosts.yml && gh auth status"
+```
+
+6. Set up cli 
+```bash
+gh auth setup-git
+```
+7. Switch Account
+```bash
+gh <suffix>
+```
+
