@@ -127,7 +127,7 @@ gh auth setup-git
 Now it's work. Enjoy
 
 
-## TLDR version
+# TLDR version
 
 
 1.  Edit `.gitconfig`
