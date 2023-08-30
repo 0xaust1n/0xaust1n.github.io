@@ -30,7 +30,172 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.2.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">Categories</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Austin'Blog</div><div class="header-banner-info__subtitle"></div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/switch-git-account/">Multi-Github accounts through terminal</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon" data-popover="Created Time" data-popover-pos="up"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__value">2022-07-31</span></span></div></header><div class="post-body"><div class="post-excerpt"><h1 id="Intro"   >
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.2.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">Categories</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Austin'Blog</div><div class="header-banner-info__subtitle"></div></div><div class="header-banner-arrow"><div class="header-banner-arrow__icon"><i class="fas fa-angle-down"></i></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/how-to-lube/">How to Lube</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon" data-popover="Created Time" data-popover-pos="up"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__value">2023-08-30</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h2 id="Intro-for-Intro"   >
+          <a href="#Intro-for-Intro" class="heading-link"><i class="fas fa-link"></i></a><a href="#Intro-for-Intro" class="headerlink" title="Intro for Intro"></a>Intro for Intro</h2>
+      <blockquote>
+<p>This post’s TA are chinese,<br>SO the entire post was written in Chinese. </p>
+</blockquote>
+
+        <h2 id="前言"   >
+          <a href="#前言" class="heading-link"><i class="fas fa-link"></i></a><a href="#前言" class="headerlink" title="前言"></a>前言</h2>
+      <blockquote>
+<p>潤軸沒有絕對  </p>
+</blockquote>
+<ul>
+<li><p>本篇不會解釋為什麼要潤軸  </p>
+</li>
+<li><p>以下提供的方法只是我個人習慣<br>可以只選取你覺得有料的 加以學習<br>你不贊同的 可以無視或友善的討論  </p>
+</li>
+<li><p>以下提供的方法並非我個人原創<br>所包含的技術可能從各種影片或是自身經驗學習二來<br>但本片文章由我本人一字一句撰寫出來</p>
+</li>
+</ul>
+
+        <h4 id="TL-DR"   >
+          <a href="#TL-DR" class="heading-link"><i class="fas fa-link"></i></a><a href="#TL-DR" class="headerlink" title="TL,DR"></a>TL,DR</h4>
+      <blockquote>
+<p>不負責聲明: 以下方法僅供參考 並非絕對</p>
+</blockquote>
+
+        <h2 id="工具清單"   >
+          <a href="#工具清單" class="heading-link"><i class="fas fa-link"></i></a><a href="#工具清單" class="headerlink" title="工具清單"></a>工具清單</h2>
+      
+        <h3 id="必需品"   >
+          <a href="#必需品" class="heading-link"><i class="fas fa-link"></i></a><a href="#必需品" class="headerlink" title="必需品"></a>必需品</h3>
+      <ul>
+<li>開軸器  </li>
+<li>潤軸筆  </li>
+<li>軸潤油  </li>
+<li>彈簧油</li>
+</ul>
+
+        <h3 id="非必需-但建議要有的工具"   >
+          <a href="#非必需-但建議要有的工具" class="heading-link"><i class="fas fa-link"></i></a><a href="#非必需-但建議要有的工具" class="headerlink" title="非必需 但建議要有的工具"></a>非必需 但建議要有的工具</h3>
+      <ul>
+<li>空的裝軸的盒子數個<br>(比如Geon, Gateron, Drop會給35裝的盒子)  </li>
+<li>空的且乾淨小盒子 最好能密封<br>(比如lumia的彈簧盒)  </li>
+<li>床頭的衛生紙  </li>
+<li>媽媽廚房的廚房紙 </li>
+<li>夾軸器 (夾軸心的)  </li>
+<li>各種鑷子 (碳纖維佳)</li>
+<li>熒幕燈&#x2F; 書桌燈</li>
+</ul>
+
+        <h3 id="為何要以上額外的工具"   >
+          <a href="#為何要以上額外的工具" class="heading-link"><i class="fas fa-link"></i></a><a href="#為何要以上額外的工具" class="headerlink" title="為何要以上額外的工具"></a>為何要以上額外的工具</h3>
+      <ul>
+<li>空的裝軸的盒子數個</li>
+</ul>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="/../assets/how-to-lube/container.jpg"  alt="container">
+      <br>如上圖 </p>
+<blockquote>
+<p>PS: 圖片是在潤ug 要一顆一顆的潤 所以才會這樣擺放<br>正常35格都會是擺滿軸座  </p>
+</blockquote>
+<p>這個盒子主要用來裝軸座 一般數量為<code>35</code>個<br>我潤軸的過程中會按照順序處理<br>反而不會一顆一顆的潤<br><del>盒子潤比潤軸台實用多了</del>  </p>
+<p>濃縮順序:</p>
+<ol>
+<li>拆軸&amp;放軸座到盒子</li>
+<li>潤彈簧&amp;晾乾彈簧</li>
+<li>放彈簧</li>
+<li>潤軸心 潤完就放在軸座上</li>
+<li>蓋上蓋</li>
+</ol>
+<p><code>35</code> 個為一組循環 也好控制數量<br>可以預先把所有的軸拆開 把軸座都放在盒子裡<br>有時間再來潤</p>
+<ul>
+<li>空的且乾淨小盒子 最好能密封</li>
+</ul>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="/../assets/how-to-lube/small-container.jpg"  alt="small-container">
+      <br>彈簧放進去 油滴進去 開搖 完事<br>簡單粗暴 </p>
+<ul>
+<li>床頭的衛生紙</li>
+</ul>
+<blockquote>
+<p>不必解釋了吧  大家都懂</p>
+</blockquote>
+<ul>
+<li>媽媽廚房的廚房紙</li>
+</ul>
+<p>彈簧搖完 我會把彈簧分開坦平在廚房紙上<br>再蓋上一張 拿一個稍微有點重量的東西壓在上面<br>靜置10分鐘到30分鐘 (時間隨便 看心情 急的話幾分分鐘就好)<br>這樣是預防彈簧發出撲次撲次的聲音<br><code>如果彈簧是用刷的就沒必要了</code>  </p>
+<ul>
+<li>夾軸器 (夾軸心的)</li>
+</ul>
+<blockquote>
+<p>都2023了 不會還用手拿軸心吧</p>
+</blockquote>
+<ul>
+<li>各種鑷子 (碳纖維佳)</li>
+</ul>
+<p>各種地方都會用到 好比說夾彈簧<br>建議碳纖維是 怕刮傷套件<br>手都不小心滑掉 會傷到自己的寶貝  </p>
+<ul>
+<li>熒幕燈&#x2F; 書桌燈</li>
+</ul>
+<p>我桌子剛剛好在背光那一面<br>所以需要一盞燈 看油有沒有確實塗抹在軸心上<br>如果家裡光線條件好 可以略過</p>
+
+        <h3 id="推薦清單-無葉配"   >
+          <a href="#推薦清單-無葉配" class="heading-link"><i class="fas fa-link"></i></a><a href="#推薦清單-無葉配" class="headerlink" title="推薦清單 (無葉配)"></a>推薦清單 (無葉配)</h3>
+      <ul>
+<li>潤軸: Geon粗筆</li>
+<li>夾軸: Tx夾軸筆 或是 Geon夾軸筆</li>
+<li>軸心: 杜邦205g0 &#x2F; Tribosys 3204 &#x2F; Payson 3204</li>
+<li>彈簧: 杜邦105</li>
+<li>衛星軸夾軸: 杜邦205g0&#x2F; 杜邦205g0 mix 105</li>
+<li>衛星軸填充: XHT&#x2F;Hvg(衛星軸雖然不在本片內容 但一樣包含給你)<br>其他能用就行</li>
+</ul>
+
+        <h2 id="潤軸"   >
+          <a href="#潤軸" class="heading-link"><i class="fas fa-link"></i></a><a href="#潤軸" class="headerlink" title="潤軸"></a>潤軸</h2>
+      <p>這邊重點只會講潤軸心<br>彈簧已經在盒子跟廚房紙部分詳細說明了<br>其他我也不太潤  好比說上蓋或是軸座<br>追求是整體的一致性 而不是極致的聲音  </p>
+
+        <h3 id="沾油"   >
+          <a href="#沾油" class="heading-link"><i class="fas fa-link"></i></a><a href="#沾油" class="headerlink" title="沾油"></a>沾油</h3>
+      <p>沾完 在油的上蓋轉一轉 再往軸心上刷<br>這樣可以控制油的量 薄薄的上一層油即可<br>薄潤效果就很好了  除非你喜歡非常悶的聲音  </p>
+
+        <h3 id="軸心潤滑"   >
+          <a href="#軸心潤滑" class="heading-link"><i class="fas fa-link"></i></a><a href="#軸心潤滑" class="headerlink" title="軸心潤滑"></a>軸心潤滑</h3>
+      <blockquote>
+<p>粗潤只潤有接觸的地方 可以仔細刷也可以用點的方式讓油在後期按壓的時候自然暈開<br>精潤接觸面全潤並且仔細刷 避免任何問題  </p>
+</blockquote>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="/../assets/how-to-lube/1.png"  alt="lube-1">
+        </p>
+<center>圖一</center>  
+
+<ul>
+<li>軸心正面  如圖一的Front-size<blockquote>
+<p>粗潤: 可以只潤小腳 中間點一滴油 讓他在後期按壓的時候自然暈開<br>精潤: 仔細刷小腳正面 中間刷滿讓油鋪滿整個表面 (推薦薄潤再像我這樣刷)</p>
+</blockquote>
+</li>
+</ul>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="/../assets/how-to-lube/2.png"  alt="lube-2">
+       </p>
+<center>圖二</center>  
+
+<ul>
+<li>軸心側面</li>
+</ul>
+<blockquote>
+<p>粗潤: 仔細刷凸出來的縫隙跟凸出來的表面 （請融合上圖一跟圖二的標記區域）<br>精潤: 包含粗潤的所有部分 側面全刷 刷好刷滿  </p>
+</blockquote>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="/../assets/how-to-lube/3.png"  alt="lube-3">
+        </p>
+<center>圖三</center>  
+
+<ul>
+<li>軸心背面</li>
+</ul>
+<blockquote>
+<p>粗潤: 只刷中間 如圖一<br>精潤: 背面全刷 如圖三  </p>
+</blockquote>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/switch-git-account/">Multi-Github accounts through terminal</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon" data-popover="Created Time" data-popover-pos="up"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__value">2022-07-31</span></span></div></header><div class="post-body"><div class="post-excerpt"><h1 id="Intro"   >
           <a href="#Intro" class="heading-link"><i class="fas fa-link"></i></a><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h1>
       <p>Cause my company requires all the employees to use the company’s Github account.<br>But sometimes I still need to use my personal account for different projects.<br>And I’m too lazy to set the git local setting for all the repo.<br>It’s kinda annoying that you need to set the config whenever you create a new repo or project.<br>So, Let’s fix it,<br>And Keep you lazy.</p></div><div class="post-readmore"><a class="post-readmore__link" href="/switch-git-account/"><span class="post-readmore__text">Read More</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/how-to-hexo/">The details that didn't mention in Hexo's docs</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon" data-popover="Created Time" data-popover-pos="up"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__value">2022-07-17</span></span></div></header><div class="post-body"><div class="post-excerpt"><!--url-->
 
