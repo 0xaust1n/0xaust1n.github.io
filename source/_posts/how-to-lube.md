@@ -5,8 +5,8 @@ categories:
   - [Keebs]
 ---
 ## Intro for Intro  
-> This post's TA are chinese,
-> SO the entire post was written in Chinese. 
+> This post's TA are Chinese,
+> So the entire post was written in Chinese. 
 
 ## 前言
 > 潤軸沒有絕對  
