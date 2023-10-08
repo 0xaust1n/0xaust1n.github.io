@@ -8,7 +8,7 @@ categories:
 > This post's TA are Chinese,
 > So the entire post was written in Chinese. 
 
-## 前言
+## 前言  
 > 潤軸沒有絕對  
 - 本篇不會解釋為什麼要潤軸  
   
@@ -20,7 +20,7 @@ categories:
 所包含的技術可能從各種影片或是自身經驗學習而來  
 但本片文章由我本人一字一句撰寫出來
 
-#### TL,DR 
+**TL,DR** 
 > 不負責聲明: 以下方法僅供參考 並非絕對
 
 ## 工具清單  
@@ -45,7 +45,7 @@ categories:
 - 螢幕燈/ 書桌燈  
 - 放大鏡  
 
-### 為何要以上額外的工具
+### 為何要以上額外的工具  
 - 空的裝軸的盒子數個  
 
 ![container](../assets/how-to-lube/container.jpg)
