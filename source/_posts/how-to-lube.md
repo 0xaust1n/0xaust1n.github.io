@@ -42,7 +42,7 @@ categories:
 - 媽媽廚房的廚房紙  
 - 夾軸器 (夾軸心的)  
 - 各種鑷子 (碳纖維佳)  
-- 熒幕燈/ 書桌燈  
+- 螢幕燈/ 書桌燈  
 - 放大鏡  
 
 ### 為何要以上額外的工具
@@ -112,7 +112,7 @@ categories:
 所以需要一盞燈 看油有沒有確實塗抹在軸心上
 如果家裡光線條件好 可以略過
 
-- 放大鏡  
+- 放大鏡 （友人推薦 我自己是用不到）
 
 仔細看原本軸體有沒有油  
 還有看上蓋裡面的導軌密合度 
@@ -120,13 +120,17 @@ categories:
 還有自己的油有沒有塗均勻  
 
 ### 推薦清單 (無葉配)  
-
+潤軸菜單
 - 潤軸: Geon粗筆 (強烈建議)  
 - 夾軸: Tx夾軸筆 或是 Geon夾軸筆  
 - 軸心: 杜邦205g0 / Tribosys 3204 / Payson 3204  
 - 彈簧: 杜邦105  
 - 衛星軸假軸: 杜邦205g0/ 杜邦205g0 mix 105  (衛星軸雖然不在本篇內容 但一樣包含給你)  
 - 衛星軸填充: XHT/Hvg
+
+額外配件
+- 軸間紙: Deskey, Tx
+- 彈簧: Geon, Tx
 
 其他能用就行  
 
@@ -190,3 +194,76 @@ categories:
 
 > 粗潤: 只刷中間 如圖一  
 > 精潤: 背面全刷 如圖三  
+
+
+## FAQ
+
+> Q1. 什麼叫Break-in  
+
+也被稱之為壓軸  
+Hyperglide(HG) 軸壓過會叫Ultraglide Black 簡稱UG  
+Cherry茶軸壓過而會被叫 ButterBrown  
+一般會以 Break-in xxx times來形容軸壓了多次   
+通過機器去模擬人為壓軸的行為, 一般會壓幾十萬次或是到一百萬次  
+讓軸心上蓋底座互相磨合更加滑順  
+
+> Q2. 為什麼UG要分開潤？  
+
+如Q1的解釋  
+因為軸的零件經過互相磨合 已經變成彼此的形狀了  
+所以要分開潤 以免搞混  
+
+> Q3. 彈簧搖過了 可是還是有彈簧音怎麼辦?  
+
+換就對了 代表原本的彈簧真的不行  
+目前我常用的是: `Tx` , `Geon`  
+lumia有時候搖過還是會...  
+
+> Q4. L&F是什麼意思  
+
+Lubed & Film  潤過跟加軸間紙  
+
+> Q5. 承上題, 為什麼要加軸間紙  
+
+常見有以下幾種情形可以加上軸間紙:  
+1. 上下蓋不夠緊 會輕微晃動  
+2. 軸壓過  
+3. 追求更紮實的聲音  
+
+> Q6. 段落軸 潤小腳不是會減少段落感嗎?  
+
+確實,但就一點點  
+我願意犧牲一點點段落感去換聲音  
+就看你自己的取捨了  
+
+> Q7. xx換色 真的是只換色嗎?  
+
+不是, 都是騙你的  
+
+> Q8. 有推什麼軸體嗎?  
+
+我覺得很看個人， 但我可以跟你說我擁有哪些:
+醜話說在前面 我有的 但有些我不一定推薦    
+```
+段落:
+- drop invry holypanda * 110
+- drop holypanda x * 105
+- zeal purple v2 * 110 
+- tecsee geon white * 105
+
+線性:
+-  gateron raw * 70 (lubed)
+- gateron mordern grey * 70
+- gateron cream soda * 90 (lubed & film) 
+- gateron x * 70 (lubed & film) 
+- gateron mizu minks * 70
+- gateron minks * 70
+- jwk soct * 70 (lubed)
+- jwk mauve * 70
+- jwk commute * 70 (lubed)
+- tecsee geon black * 175
+- tecess geon yellow * 70
+- tecess darkmoon * 70 (lubed)
+- cherry nixie * 120 
+- cherry utlraglide black * 200+ (lubed & film) 
+```
