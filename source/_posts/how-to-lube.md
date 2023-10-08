@@ -249,21 +249,21 @@ Lubed & Film  潤過跟加軸間紙
 - drop invry holypanda * 110
 - drop holypanda x * 105
 - zeal purple v2 * 110 
-- tecsee geon white * 105
+- tecsee geon white * 105 (潤了還是有彈片音)
 
 線性:
--  gateron raw * 70 (lubed)
+- gateron raw * 70 (lubed)
 - gateron mordern grey * 70
-- gateron cream soda * 90 (lubed & film) 
+- gateron cream soda * 90 (lubed & film) (廠潤垃圾) 
 - gateron x * 70 (lubed & film) 
 - gateron mizu minks * 70
 - gateron minks * 70
 - jwk soct * 70 (lubed)
-- jwk mauve * 70
+- jwk mauve * 70 (羊駝換色 不如買羊駝)
 - jwk commute * 70 (lubed)
-- tecsee geon black * 175
-- tecess geon yellow * 70
+- tecsee geon black * 175  (zaku換色 彈片音被一些人詬病 不如買zaku)
+- tecess geon yellow * 70  (聲音微散)
 - tecess darkmoon * 70 (lubed)
-- cherry nixie * 120 
+- cherry nixie * 120  (櫻桃最貴 不如左轉ug)
 - cherry utlraglide black * 200+ (lubed & film) 
 ```
