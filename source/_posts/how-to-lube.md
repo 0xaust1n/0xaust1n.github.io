@@ -203,7 +203,7 @@ categories:
 也被稱之為壓軸  
 Hyperglide(HG) 軸壓過會叫Ultraglide Black 簡稱UG  
 Cherry茶軸壓過而會被叫 ButterBrown  
-一般會以 Break-in xxx times來形容軸壓了多次   
+一般會以 Break-in xxx times來形容軸壓了多少次   
 通過機器去模擬人為壓軸的行為, 一般會壓幾十萬次或是到一百萬次  
 讓軸心上蓋底座互相磨合更加滑順  
 
@@ -229,6 +229,8 @@ Lubed & Film  潤過跟加軸間紙
 1. 上下蓋不夠緊 會輕微晃動  
 2. 軸壓過  
 3. 追求更紮實的聲音  
+Film的時候請注意正反 撕下來哪一面朝上就是哪一面朝上  
+好比說deskey 亮面是朝下的 poron朝上  
 
 > Q6. 段落軸 潤小腳不是會減少段落感嗎?  
 
