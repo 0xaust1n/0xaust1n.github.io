@@ -201,9 +201,14 @@ categories:
 > Q1. 什麼叫Break-in  
 
 也被稱之為壓軸  
-Hyperglide(HG) 軸壓過會叫Ultraglide Black 簡稱UG  
-Cherry茶軸壓過而會被叫 ButterBrown  
-一般會以 Break-in xxx times來形容軸壓了多少次   
+常見會拿去壓的 一般都是Cherry的`HG(Hyperglide)`系列軸體  
+因為沙沙的聲音是他們家的特色  但有些人不喜歡沙沙的聲音  
+就會拿去壓 讓軸體更加的滑順 減少沙沙聲  
+黑軸(Black): 壓過被稱之為 `Ultraglide Black` 簡稱UG  
+茶軸(Brown): 壓過被稱之為 `ButterBrown`  ~~簡稱BB~~  
+當然幾乎什麼軸都可以壓 只是效果好不好就需要自己測試了  
+
+一般會以 `Break-in xxx times` 來形容軸壓了多少次   
 通過機器去模擬人為壓軸的行為, 一般會壓幾十萬次或是到一百萬次  
 讓軸心上蓋底座互相磨合更加滑順  
 
@@ -217,7 +222,7 @@ Cherry茶軸壓過而會被叫 ButterBrown
 
 換就對了 代表原本的彈簧真的不行  
 目前我常用的是: `Tx` , `Geon`  
-lumia有時候搖過還是會...  
+`lumia` 有時候搖過還是會...  
 
 > Q4. L&F是什麼意思  
 
@@ -229,6 +234,7 @@ Lubed & Film  潤過跟加軸間紙
 1. 上下蓋不夠緊 會輕微晃動  
 2. 軸壓過  
 3. 追求更紮實的聲音  
+
 Film的時候請注意正反 撕下來哪一面朝上就是哪一面朝上  
 好比說deskey 亮面是朝下的 poron朝上  
 
@@ -241,32 +247,34 @@ Film的時候請注意正反 撕下來哪一面朝上就是哪一面朝上
 > Q7. xx換色 真的是只換色嗎?  
 
 不是, 都是騙你的  
+有些換色味道還是會變  
+像是鈷藍家族 或是 Ink黑換色  
 
 > Q8. 有推什麼軸體嗎?  
 
-我覺得很看個人， 但我可以跟你說我擁有哪些:
+我覺得很看個人， 但我可以跟你說我擁有哪些:  
 醜話說在前面 我有的 但有些我不一定推薦    
 ```
 段落:
 - drop invry holypanda * 110
 - drop holypanda x * 105
 - zeal purple v2 * 110 
-- tecsee geon white * 105 (潤了還是有彈片音)
+- tecsee geon white *  
 
 線性:
 - gateron raw * 70 (lubed)
 - gateron mordern grey * 70
-- gateron cream soda * 90 (lubed & film) (廠潤垃圾) 
+- gateron cream soda * 90 (lubed & film)  
 - gateron x * 70 (lubed & film) 
 - gateron mizu minks * 70
 - gateron minks * 70
 - jwk soct * 70 (lubed)
-- jwk mauve * 70 (羊駝換色 不如買羊駝)
+- jwk mauve * 70
 - jwk commute * 70 (lubed)
-- tecsee geon black * 175  (zaku換色 彈片音被一些人詬病 不如買zaku)
-- tecess geon yellow * 70  (聲音微散)
+- tecsee geon black * 175  
+- tecess geon yellow * 70  
 - tecess darkmoon * 70 (lubed)
-- cherry nixie * 120  (櫻桃最貴 不如左轉ug)
+- cherry nixie * 120  
 - cherry utlraglide black * 200+ (lubed & film) 
 ```
 
@@ -274,7 +282,6 @@ Film的時候請注意正反 撕下來哪一面朝上就是哪一面朝上
 
 建議不要 除非沒時間  
 有些廠潤很拉跨 不如不要潤  
-好比說有些軸 ~~cream soda~~  
 直接往軸心柱加油 或是油量爆幹多  
 還要拿去超聲波  不如自己潤一潤  
 相信自己的手藝 都比廠潤好  
