@@ -1,7 +1,7 @@
 ---
 title: How to Lube
 date: 2023-08-30 18:40:40
-updated: 2023-11-14
+updated: 2023-11-14 18:40:40
 categories:
   - [Keebs]
 ---
@@ -9,6 +9,8 @@ categories:
 > The target audience for this post are Chinese ppl  
 > So the entire post is written in Chinese 
 
+## 最後更新時間
+> 2023-11-14  
 
 ## 前言  
 - 本篇不會解釋為什麼要潤軸  
@@ -152,6 +154,10 @@ categories:
 > 不管是袋潤或是盒潤 目前都會有幾顆還是有彈簧音的現象  
 > 目前還在尋找解決方案  
 > 找到才會進行更新  
+
+目前暫定的解法是 把有彈簧音的彈簧單獨拿出來  
+用205或是3204刷彈簧的兩端 可以解決這個問題  
+是不是暫時的我就不是那麼確定了  
 
 Q: 如何測試彈簧音?  
 A:  
