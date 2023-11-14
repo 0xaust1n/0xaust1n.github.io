@@ -1,6 +1,7 @@
 ---
 title: How to Lube
 date: 2023-08-30 18:40:40
+updated: 2023-11-14
 categories:
   - [Keebs]
 ---
@@ -8,8 +9,6 @@ categories:
 > The target audience for this post are Chinese ppl  
 > So the entire post is written in Chinese 
 
-## 最後更新時間
-> 2023-11-05  
 
 ## 前言  
 - 本篇不會解釋為什麼要潤軸  
@@ -148,6 +147,15 @@ categories:
 再視情況增加減少潤軸面積 好比說段落軸可能不潤小腳效果更好  
 這樣做是怕一股腦兒全部潤完 結果自己不喜歡要重潤  
 畢竟每個軸體都會有些許的不同  所以每一顆不一定可以用相同方法去潤  
+
+## 彈簧潤滑 (待更新)
+> 不管是袋潤或是盒潤 目前都會有幾顆還是有彈簧音的現象  
+> 目前還在尋找解決方案  
+> 找到才會進行更新  
+
+Q: 如何測試彈簧音?  
+A:  
+![sprng-test](../assets/how-to-lube/spring-test.gif)  
 
 ## 潤軸  
 
