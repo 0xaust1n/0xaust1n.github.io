@@ -99,7 +99,7 @@ categories:
 
 ## 潤彈簧 (待更新)
 把彈簧對應數量的彈簧丟進盒子裏  
-![small-container](../assets/how-to-lube/small-container.jpg)  
+![small-container](../assets/how-to-lube/spring-container.jpg)  
 
 每10顆1滴105 (可自己進行測試做調整 不是絕對)  
 搖晃大概2~3分鐘  
@@ -174,7 +174,7 @@ A:
 ## 工具解釋
 - 空的裝軸的盒子  
 
-![container](../assets/how-to-lube/container.jpg)
+![container](../assets/how-to-lube/switch-container.jpg)
 如上圖 (圖中是: Wuque Studio的潤軸盒子)
 
 這個盒子主要用來裝軸座 一般數量為`35`個  
