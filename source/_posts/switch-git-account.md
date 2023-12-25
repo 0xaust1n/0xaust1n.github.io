@@ -5,7 +5,7 @@ categories:
   - [Tech, Git]
 ---
 
-# Intro
+## Intro
 Cause my company requires all the employees to use the company's Github account.  
 But sometimes I still need to use my personal account for different projects.  
 And I'm too lazy to set the git local setting for all the repo.  

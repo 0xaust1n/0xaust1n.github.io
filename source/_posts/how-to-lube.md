@@ -6,11 +6,16 @@ categories:
   - [Keebs]
 ---
 
-> 最後更新時間: 2023-11-21   
 
-- 潤軸只是輔助 軸爛的話建議丟了
-- 本篇會持續更新 跟修正 再麻煩多多回來光顧了  
+## Intro
+This article is about switch lubrication tutorials.  
+If you're looking for English verison, it is not available yet.  
+---
+潤軸只是輔助 軸爛的話建議丟了  
+本篇會持續更新 跟修正 再麻煩多多回來光顧了  
+最後更新時間: 2023-11-21  
 <!-- more -->
+
 
 ## 前言  
 - 本篇不會解釋為什麼要潤軸  
