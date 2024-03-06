@@ -2,7 +2,7 @@
 title: The details that didn't mention in Hexo's docs
 date: 2022-07-17 17:40:40
 categories:
-  - [Hexo]
+  - [Tech, Hexo]
 ---
 
 <!--url-->
