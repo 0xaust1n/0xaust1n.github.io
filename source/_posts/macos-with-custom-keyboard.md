@@ -85,6 +85,7 @@ Layer1 範例設定(請依照自己的習慣調整):
 但如果你好死不死，兩個都用得很頻繁  
 那就需要依靠一個程式來解決了
 
+0. 設定一顆 `Right CTRL` 在空格右邊那顆 或是任何你喜歡的位置
 1. [安裝 Karabiner-Elements](https://karabiner-elements.pqrs.org/)
 2. 他 Karabiner 需要的權限全開(他應該會提示你權限不足)
 
@@ -147,9 +148,10 @@ LT(2,KC_F5):按住切層mo(2),短按F5
 ### Q: Hexcode 對照表呢？
 
 A.
-當你設定`Any`鍵的時候 你會感謝有他  
-[點我看一般](https://github.com/qmk/libqmk/blob/master/include/qmk/keycodes/basic.h)
-/ [點我看特殊](https://github.com/qmk/libqmk/blob/master/include/qmk/keycodes/quantum.h)
+當你設定`Any`鍵的時候 你會感謝有他
+
+- [點我看 一般鍵位](https://github.com/qmk/libqmk/blob/master/include/qmk/keycodes/basic.h)
+- [點我看 特殊鍵位](https://github.com/qmk/libqmk/blob/master/include/qmk/keycodes/quantum.h)
 
 ### Q: 如何設定 Marco(巨集)
 
