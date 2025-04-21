@@ -105,8 +105,9 @@ Layer1 範例設定(請依照自己的習慣調整):
 這樣只要`Right CTRL` + `Capslock` + `1~=` 就可以觸發 Apple 任何媒體鍵了
 
 > 如果沒反應代表以上步驟你有漏的 或是權限沒開  
-> 常見是 Driver Extension 這邊沒開  
-> ![driver extension](../assets/macos-with-custom-keyboard/7.png)
+> 常見是 Driver Extension 這邊沒開
+
+![driver extension](../assets/macos-with-custom-keyboard/7.png)
 
 ## 結語
 
@@ -169,4 +170,4 @@ A. ↓
 
 ### Q: 我的問題不在 FAQ 怎麼辦
 
-> ![我不知道](https://truth.bahamut.com.tw/s01/202009/9e28a95a8967a458c273b93aca873b93.GIF)
+![我不知道](https://truth.bahamut.com.tw/s01/202009/9e28a95a8967a458c273b93aca873b93.GIF)
