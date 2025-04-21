@@ -34,6 +34,10 @@ jobs:
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
 
+      - name: Replace Google verification with secret
+        run: |
+          sed -i "s/google_site_verification:.*/google_site_verification: ${{ secrets.GOOGLE_SITE_VERIFICATION }}/" _config.next.yml
+
       - name: Build Hexo Site
         run: |
           yarn clean
