@@ -1,62 +1,250 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="renderer" content="webkit"><meta name="force-rendering" content="webkit"><script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) {
-  window.location.href = 'https://support.dmeng.net/upgrade-your-browser.html';
-}</script><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="description" content="Intro       Cause my company requires all the employees to use the company’s Github account.But sometimes I still need to use my personal account for different projects.And I’m too lazy to">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.2.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="iM9fUgsA9lqC6YAThrgEgafENV-EANOSIXJCAyEjPCw">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"0xaust1n.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.23.0","exturl":true,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="IntroCause my company requires all the employees to use the company’s Github account.But sometimes I still need to use my personal account for different projects.And I’m too lazy to set the git local">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Multi-Github accounts through terminal">
 <meta property="og:url" content="https://0xaust1n.github.io/switch-git-account/index.html">
 <meta property="og:site_name" content="Austin&#39;Blog">
-<meta property="og:description" content="Intro       Cause my company requires all the employees to use the company’s Github account.But sometimes I still need to use my personal account for different projects.And I’m too lazy to">
+<meta property="og:description" content="IntroCause my company requires all the employees to use the company’s Github account.But sometimes I still need to use my personal account for different projects.And I’m too lazy to set the git local">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-07-31T03:17:40.000Z">
-<meta property="article:modified_time" content="2025-04-18T02:13:09.126Z">
+<meta property="article:modified_time" content="2025-04-21T15:05:17.428Z">
 <meta property="article:author" content="Austin">
-<meta name="twitter:card" content="summary"><title>Multi-Github accounts through terminal | Austin'Blog</title><link ref="canonical" href="https://0xaust1n.github.io/switch-git-account/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><script src="https://www.googletagmanager.com/gtag/js?id=G-MD71ZVNBJ5" async=""></script><script>if (window.location.hostname !== 'localhost') {
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){ dataLayer.push(arguments); }
-  gtag('js', new Date());
-  gtag('config', 'G-MD71ZVNBJ5');
-}</script><script>var Stun = window.Stun || {};
-var CONFIG = {
-  root: '/',
-  algolia: undefined,
-  assistSearch: undefined,
-  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
-  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
-  header: {"enable":true,"showOnPost":false,"scrollDownIcon":true},
-  postWidget: {"endText":true},
-  nightMode: {"enable":true},
-  back2top: {"enable":true},
-  codeblock: {"style":"default","highlight":"dark","wordWrap":false},
-  reward: false,
-  fancybox: true,
-  zoomImage: undefined,
-  galleryWaterfall: undefined,
-  lazyload: true,
-  pjax: undefined,
-  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
-  shortcuts: undefined,
-  prompt: {"copyButton":"Copy","copySuccess":"Copy Success","copyError":"Copy Error"},
-  sourcePath: {"js":"js","css":"css","images":"images"},
-};
+<meta name="twitter:card" content="summary">
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.2.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">Categories</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">Multi-Github accounts through terminal</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon" data-popover="Created Time" data-popover-pos="up"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__value">2022-07-31</span></span></div></header><div class="post-body">
-        <h2 id="Intro"   >
-          <a href="#Intro" class="heading-link"><i class="fas fa-link"></i></a><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h2>
-      <p>Cause my company requires all the employees to use the company’s Github account.<br>But sometimes I still need to use my personal account for different projects.<br>And I’m too lazy to set the git local setting for all the repo.<br>It’s kinda annoying that you need to set the config whenever you create a new repo or project.<br>So, Let’s fix it,<br>And Keep you lazy.</p>
+
+<link rel="canonical" href="https://0xaust1n.github.io/switch-git-account/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://0xaust1n.github.io/switch-git-account/","path":"switch-git-account/","title":"Multi-Github accounts through terminal"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Multi-Github accounts through terminal | Austin'Blog</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Austin'Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Intro"><span class="nav-number">1.</span> <span class="nav-text">Intro</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Prepare"><span class="nav-number"></span> <span class="nav-text">Prepare</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Configuration"><span class="nav-number"></span> <span class="nav-text">Configuration</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Authentication"><span class="nav-number"></span> <span class="nav-text">Authentication</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TLDR-version"><span class="nav-number"></span> <span class="nav-text">TLDR version</span></a></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Austin</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://0xaust1n.github.io/switch-git-account/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Austin">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Austin'Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Multi-Github accounts through terminal | Austin'Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Multi-Github accounts through terminal
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-07-31 03:17:40" itemprop="dateCreated datePublished" datetime="2022-07-31T03:17:40+00:00">2022-07-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-04-21 15:05:17" itemprop="dateModified" datetime="2025-04-21T15:05:17+00:00">2025-04-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h2><p>Cause my company requires all the employees to use the company’s Github account.<br>But sometimes I still need to use my personal account for different projects.<br>And I’m too lazy to set the git local setting for all the repo.<br>It’s kinda annoying that you need to set the config whenever you create a new repo or project.<br>So, Let’s fix it,<br>And Keep you lazy.</p>
 <span id="more"></span>
 
-
-        <h1 id="Prepare"   >
-          <a href="#Prepare" class="heading-link"><i class="fas fa-link"></i></a><a href="#Prepare" class="headerlink" title="Prepare"></a>Prepare</h1>
-      <ul>
-<li><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://cli.github.com/" >Github CLI</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></li>
+<h1 id="Prepare"><a href="#Prepare" class="headerlink" title="Prepare"></a>Prepare</h1><ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9jbGkuZ2l0aHViLmNvbS8=">Github CLI<i class="fa fa-external-link-alt"></i></span></li>
 <li>Any Text Editor </li>
 <li>Nice terminal</li>
 </ul>
-
-        <h1 id="Configuration"   >
-          <a href="#Configuration" class="heading-link"><i class="fas fa-link"></i></a><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h1>
-      <p>After Installing all the required tools.<br>Pop up your terminal, change the directory to your root (macOS&#x2F;Linux)  </p>
+<h1 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h1><p>After Installing all the required tools.<br>Pop up your terminal, change the directory to your root (macOS&#x2F;Linux)  </p>
 <blockquote>
 <p>If you’re windows user, please google where is your root git-config sit at.  </p>
 </blockquote>
@@ -64,58 +252,52 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.2.0"></he
 <blockquote>
 <p>If you got more than 2 accounts,you can add the <code>includeIf</code> as more as you want.  </p>
 </blockquote>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[includeIf &quot;gitdir:&lt;your-personal-directory-path&gt;&quot;]</span><br><span class="line">  path = ~/.gitconfig.personal</span><br><span class="line">[includeIf &quot;gitdir:&lt;your-working-directory-path&gt;&quot;]</span><br><span class="line">  path = ~/.gitconfig.work</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[includeIf &quot;gitdir:&lt;your-personal-directory-path&gt;&quot;]</span><br><span class="line">  path = ~/.gitconfig.personal</span><br><span class="line">[includeIf &quot;gitdir:&lt;your-working-directory-path&gt;&quot;]</span><br><span class="line">  path = ~/.gitconfig.work</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>Example:  </p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[includeIf &quot;gitdir:~/Documents/Aust1n/&quot;]</span><br><span class="line">  path = ~/.gitconfig.personal</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[includeIf &quot;gitdir:~/Documents/Aust1n/&quot;]</span><br><span class="line">  path = ~/.gitconfig.personal</span><br></pre></td></tr></table></figure>
 <p>All my repo are sitting inside the <code>Aust1n</code> folder.<br>So that all the repo will use the setting inside the <code>.gitconfig.personal</code> .<br><code>includeIf</code> is like an if-function for the config.</p>
 <p>Then you need to create a new file named <code>.gitconfig.personal</code> .</p>
 <blockquote>
 <p>You can naming the config file with any suffix  </p>
 </blockquote>
 <p>The content looks like below  </p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[user]</span><br><span class="line">	name = &lt;your-github-id&gt;</span><br><span class="line">	email = &lt;your-github-mail&gt;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[user]</span><br><span class="line">	name = &lt;your-github-id&gt;</span><br><span class="line">	email = &lt;your-github-mail&gt;</span><br></pre></td></tr></table></figure>
 
 <p>After finishing all the config.<br>Your <code>.gitconfig</code> will follow by your working directory.  </p>
-
-        <h1 id="Authentication"   >
-          <a href="#Authentication" class="heading-link"><i class="fas fa-link"></i></a><a href="#Authentication" class="headerlink" title="Authentication"></a>Authentication</h1>
-      <p>If you want to push your code, you still need the authentication for Github.<br>Here comes the Github-CLI.<br>Pop up your terminal Again, and change the directory to your <code>root/.config/gh</code>  </p>
+<h1 id="Authentication"><a href="#Authentication" class="headerlink" title="Authentication"></a>Authentication</h1><p>If you want to push your code, you still need the authentication for Github.<br>Here comes the Github-CLI.<br>Pop up your terminal Again, and change the directory to your <code>root/.config/gh</code>  </p>
 <blockquote>
 <p>If you’re windows user, please google where is your github-cli config sit at.  </p>
 </blockquote>
 <p>(If not you create a folder file named <code>gh</code>)<br>Then you need to touch (create) four files in gh directory.<br>(If files exist, you should modify the content)</p>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">touch</span> config.yml</span><br><span class="line"><span class="built_in">touch</span> hosts.yml</span><br><span class="line"><span class="built_in">touch</span> hosts.yml.personal</span><br><span class="line"><span class="built_in">touch</span> hosts.yml.work</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">touch</span> config.yml</span><br><span class="line"><span class="built_in">touch</span> hosts.yml</span><br><span class="line"><span class="built_in">touch</span> hosts.yml.personal</span><br><span class="line"><span class="built_in">touch</span> hosts.yml.work</span><br></pre></td></tr></table></figure>
 
 <p>Put the below content into the <code>config.yml</code></p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># What protocol to use when performing git operations. Supported values: ssh, https</span><br><span class="line">git_protocol: ssh</span><br><span class="line">aliases:</span><br><span class="line">  personal: &quot;!cp ~/.config/gh/hosts.yml.personal ~/.config/gh/hosts.yml &amp;&amp; gh auth status&quot;</span><br><span class="line">  work: &quot;!cp ~/.config/gh/hosts.yml.work ~/.config/gh/hosts.yml &amp;&amp; gh auth status&quot;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># What protocol to use when performing git operations. Supported values: ssh, https</span><br><span class="line">git_protocol: ssh</span><br><span class="line">aliases:</span><br><span class="line">  personal: &quot;!cp ~/.config/gh/hosts.yml.personal ~/.config/gh/hosts.yml &amp;&amp; gh auth status&quot;</span><br><span class="line">  work: &quot;!cp ~/.config/gh/hosts.yml.work ~/.config/gh/hosts.yml &amp;&amp; gh auth status&quot;</span><br></pre></td></tr></table></figure>
 
-<p>Put the below content into the <code>host.yml.&lt;suffix&gt;</code> with suffix.<br>Each suffix stands for a different account.<br><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token" >Docs for GitHub personal token</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p>Put the below content into the <code>host.yml.&lt;suffix&gt;</code> with suffix.<br>Each suffix stands for a different account.<br><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLmdpdGh1Yi5jb20vZW4vYXV0aGVudGljYXRpb24va2VlcGluZy15b3VyLWFjY291bnQtYW5kLWRhdGEtc2VjdXJlL2NyZWF0aW5nLWEtcGVyc29uYWwtYWNjZXNzLXRva2Vu">Docs for GitHub personal token<i class="fa fa-external-link-alt"></i></span></p>
 <blockquote>
 <p>Remeber check <strong>all</strong> the checkbox when you creating the Github personal token  </p>
 </blockquote>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">github.com:</span><br><span class="line">    oauth_token: &lt;github-peronsal-token&gt;</span><br><span class="line">    git_protocol: ssh</span><br><span class="line">    user: &lt;your-github-username&gt;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">github.com:</span><br><span class="line">    oauth_token: &lt;github-peronsal-token&gt;</span><br><span class="line">    git_protocol: ssh</span><br><span class="line">    user: &lt;your-github-username&gt;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>Please remind there’s a space after colon<br>Otherwise it won’t work  </p>
 </blockquote>
 <p>Then you can switch the account by using the command below:  </p>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gh personal</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gh personal</span><br></pre></td></tr></table></figure>
 <p>If the terminal shows the below info:  </p>
 <blockquote>
 <p>github.com<br> ✓ Logged in to github.com as 0xaust1n (oauth_token)<br> ✓ Git operations for github.com configured to use ssh protocol.<br> ✓ Token: *******************  </p>
 </blockquote>
 <p>Then set up the GitHub-CLI for authentication by using the command below:  </p>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gh auth setup-git</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gh auth setup-git</span><br></pre></td></tr></table></figure>
 
 <p>Now it’s work. Enjoy</p>
-
-        <h1 id="TLDR-version"   >
-          <a href="#TLDR-version" class="heading-link"><i class="fas fa-link"></i></a><a href="#TLDR-version" class="headerlink" title="TLDR version"></a>TLDR version</h1>
-      <ul>
+<h1 id="TLDR-version"><a href="#TLDR-version" class="headerlink" title="TLDR version"></a>TLDR version</h1><ul>
 <li>Edit <code>.gitconfig</code></li>
 </ul>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">code ~/.gitconfig</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">code ~/.gitconfig</span><br></pre></td></tr></table></figure>
 <p>Add below content</p>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># Each account must using different path</span><br><span class="line">[includeIf &quot;gitdir:&lt;your-personal-path&gt;&quot;]</span><br><span class="line">  path = ~/.gitconfig.&lt;suffix&gt;</span><br><span class="line">[includeIf &quot;gitdir:&lt;your-work-path&gt;&quot;]</span><br><span class="line">  path = ~/.gitconfig.&lt;suffix&gt;</span><br><span class="line">[core]</span><br><span class="line">	ignorecase = true</span><br><span class="line">[pager]</span><br><span class="line">	branch = false</span><br><span class="line">[pull]</span><br><span class="line">	rebase = true</span><br><span class="line">[credential &quot;https://github.com&quot;]</span><br><span class="line">	helper = </span><br><span class="line">	helper = !/opt/homebrew/bin/gh auth git-credential</span><br><span class="line">[credential &quot;https://gist.github.com&quot;]</span><br><span class="line">	helper = </span><br><span class="line">	helper = !/opt/homebrew/bin/gh auth git-credential</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># Each account must using different path</span><br><span class="line">[includeIf &quot;gitdir:&lt;your-personal-path&gt;&quot;]</span><br><span class="line">  path = ~/.gitconfig.&lt;suffix&gt;</span><br><span class="line">[includeIf &quot;gitdir:&lt;your-work-path&gt;&quot;]</span><br><span class="line">  path = ~/.gitconfig.&lt;suffix&gt;</span><br><span class="line">[core]</span><br><span class="line">	ignorecase = true</span><br><span class="line">[pager]</span><br><span class="line">	branch = false</span><br><span class="line">[pull]</span><br><span class="line">	rebase = true</span><br><span class="line">[credential &quot;https://github.com&quot;]</span><br><span class="line">	helper = </span><br><span class="line">	helper = !/opt/homebrew/bin/gh auth git-credential</span><br><span class="line">[credential &quot;https://gist.github.com&quot;]</span><br><span class="line">	helper = </span><br><span class="line">	helper = !/opt/homebrew/bin/gh auth git-credential</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>Create config for all suffix</li>
@@ -126,43 +308,107 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.2.0"></he
 <ul>
 <li>Add below content into each config file</li>
 </ul>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[user]</span><br><span class="line">	name = &lt;accountName&gt;</span><br><span class="line">	email = &lt;email&gt;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[user]</span><br><span class="line">	name = &lt;accountName&gt;</span><br><span class="line">	email = &lt;email&gt;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>Install gh cli</li>
 </ul>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># bash</span><br><span class="line">brew install gh</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># bash</span><br><span class="line">brew install gh</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>Add config for gh cli</li>
 </ul>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># path of location (If path does not exist, please make the dir)</span><br><span class="line">cd ~.config/gh</span><br><span class="line">touch config.yml</span><br><span class="line">touch hosts.yml</span><br><span class="line">touch hosts.yml.&lt;suffix&gt;</span><br><span class="line">... </span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># path of location (If path does not exist, please make the dir)</span><br><span class="line">cd ~.config/gh</span><br><span class="line">touch config.yml</span><br><span class="line">touch hosts.yml</span><br><span class="line">touch hosts.yml.&lt;suffix&gt;</span><br><span class="line">... </span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>Put the below content into the <code>host.yml.&lt;suffix&gt;</code> with suffix.</li>
 </ul>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">github.com:</span><br><span class="line">    oauth_token: &lt;github-peronsal-token&gt;</span><br><span class="line">    git_protocol: ssh</span><br><span class="line">    user: &lt;your-github-username&gt;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">github.com:</span><br><span class="line">    oauth_token: &lt;github-peronsal-token&gt;</span><br><span class="line">    git_protocol: ssh</span><br><span class="line">    user: &lt;your-github-username&gt;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>Put the below content into the <code>config.yml</code></li>
 </ul>
-<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git_protocol: ssh</span><br><span class="line">aliases:</span><br><span class="line">  &lt;suffix&gt;: &quot;!cp ~/.config/gh/hosts.yml.&lt;suffix&gt; ~/.config/gh/hosts.yml &amp;&amp; gh auth status&quot;</span><br><span class="line">  &lt;suffix&gt;: &quot;!cp ~/.config/gh/hosts.yml.&lt;suffix&gt; ~/.config/gh/hosts.yml &amp;&amp; gh auth status&quot;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git_protocol: ssh</span><br><span class="line">aliases:</span><br><span class="line">  &lt;suffix&gt;: &quot;!cp ~/.config/gh/hosts.yml.&lt;suffix&gt; ~/.config/gh/hosts.yml &amp;&amp; gh auth status&quot;</span><br><span class="line">  &lt;suffix&gt;: &quot;!cp ~/.config/gh/hosts.yml.&lt;suffix&gt; ~/.config/gh/hosts.yml &amp;&amp; gh auth status&quot;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>Switch Account</li>
 </ul>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gh &lt;suffix&gt;</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gh &lt;suffix&gt;</span><br></pre></td></tr></table></figure>
 
 
 <ul>
 <li>Set up cli</li>
 </ul>
-<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gh auth setup-git</span><br></pre></td></tr></table></div></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gh auth setup-git</span><br></pre></td></tr></table></figure>
 
 
-</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/how-to-lube/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">怎麼潤軸? 潤軸小講堂</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/how-to-hexo/"><span class="paginator-prev__text">The details that didn't mention in Hexo's docs</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Intro"><span class="toc-number">1.</span> <span class="toc-text">
-          Intro</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Prepare"><span class="toc-number"></span> <span class="toc-text">
-          Prepare</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Configuration"><span class="toc-number"></span> <span class="toc-text">
-          Configuration</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Authentication"><span class="toc-number"></span> <span class="toc-text">
-          Authentication</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TLDR-version"><span class="toc-number"></span> <span class="toc-text">
-          TLDR version</span></a></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/assets/avatar.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">Austin Kuo</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/0xaust1n" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github-alt"></i></span></a><a class="sidebar-ov-social-item" href="https://www.linkedin.com/in/austin-kuo-14a643191" target="_blank" rel="noopener" data-popover="LinkedIn" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-linkedin"></i></span></a><a class="sidebar-ov-social-item" href="mailto:yo861015@gmail.com" target="_blank" rel="noopener" data-popover="Contact-Me" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fa fa-envelope"></i></span></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">You have read </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/how-to-hexo/" rel="prev" title="The details that didn't mention in Hexo's docs">
+                  <i class="fa fa-angle-left"></i> The details that didn't mention in Hexo's docs
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/how-to-lube/" rel="next" title="怎麼潤軸? 潤軸小講堂">
+                  怎麼潤軸? 潤軸小講堂 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Austin</span>
+  </div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
