@@ -11,6 +11,15 @@
   </url>
   
   <url>
+    <loc>https://0xaust1n.github.io/how-to-lube/</loc>
+    
+    <lastmod>2026-02-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://0xaust1n.github.io/categories/index.html</loc>
     
     <lastmod>2026-02-03</lastmod>
@@ -46,15 +55,6 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>https://0xaust1n.github.io/how-to-lube/</loc>
-    
-    <lastmod>2026-02-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   <url>
     <loc>https://0xaust1n.github.io/</loc>
@@ -81,6 +81,13 @@
   </url>
   
   <url>
+    <loc>https://0xaust1n.github.io/categories/Keebs/</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://0xaust1n.github.io/categories/Life/Gibberish/</loc>
     <lastmod>2026-02-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -95,7 +102,7 @@
   </url>
   
   <url>
-    <loc>https://0xaust1n.github.io/categories/Keebs/</loc>
+    <loc>https://0xaust1n.github.io/categories/Keebs/Lube/</loc>
     <lastmod>2026-02-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
