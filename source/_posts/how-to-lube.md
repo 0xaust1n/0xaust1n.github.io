@@ -1,10 +1,10 @@
-
+---
 title: 怎麼潤軸? 潤軸小講堂
 date: 2023-08-30 18:40:40
-updated: 2023-11-14 18:40:40
+updated: 2026-02-03 15:00:00
 categories:
   - [Keebs, Lube]
-
+---
 
 ## Intro
 
@@ -46,7 +46,8 @@ If you're looking for English verison, it is not available yet.
 
 - [我擁有軸體](https://aus71n.notion.site/Switches-4c58baf779904111abf198fbc325a94a?pvs=4)  
 - 賣掉的一些自己潤的軸體 大約 500 多顆  
-- 數次代潤 沒仔細算 一定破千 
+- 數次代潤 沒仔細算 一定破千
+- ~~吉米未來御用的潤軸黑奴~~ 
 
 
 
