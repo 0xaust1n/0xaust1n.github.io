@@ -1,7 +1,7 @@
 ---
 title: MacOS 客製化鍵盤的正確打開放式
 date: 2025-04-17 23:34:00
-updated: 2025-04-17 23:34:00
+updated: 2026-02-03 23:34:00
 categories:
   - [Keebs]
 keyword: Mac改鍵, 客製化鍵盤
@@ -46,7 +46,7 @@ Layer0 設定範例:
 Layer1 範例設定(請依照自己的習慣調整):  
 ![VIA Layout](../assets/macos-with-custom-keyboard/2.png)
 
-1. 首先無 M1 M2 M3..這些鍵 (這些是我設定的巨集鍵 下面會展開)
+1. 首先請無視 M1 M2 M3..這些鍵 (這些是我設定的巨集鍵 下面會展開)
 2. 上下左右可以設定在 WASD/IJKL 看你是左撇子還是右撇子
 3. Function 鍵全部會設定在`1~=`鍵 剛剛對應到 12 個
 4. 65%以下的話 `~`鍵我習慣放在 Q 因為我蠻常用
@@ -109,6 +109,36 @@ Layer1 範例設定(請依照自己的習慣調整):
 
 ![driver extension](../assets/macos-with-custom-keyboard/7.png)
 
+
+## Bouns time 巨集(宏)
+
+VIA還有一個很強大的功能就是Macro  
+~~由於他不是通過系統安裝軟體觸發的 可能可以繞過一些反作弊~~  
+我只分享我自己的使用情景：  
+1. 輸入密碼  
+2. 組合鍵  (e.g.: 輸入法切換，叫出terminal)  
+
+> 注意1: macro會因為pcb記憶體的差別影響可以設定數量跟內容長度 所以不算是一個非常穩定功能  
+> 注意2: 藍牙會導致macro不穩定，比如密碼只幫你輸入一半 等問題...  
+
+先講設定密碼  
+![macro1](../assets/macos-with-custom-keyboard/macro1.png)
+1. 來到Macro的分頁
+2. 選擇你要對應macro key(m0~m15 數字可能會多會少 看PCB)
+3. 切到輸入框模式
+4. 直接輸入你的密碼
+
+再來講設定組合鍵
+![macro2](../assets/macos-with-custom-keyboard/macro2.png)
+1. 一樣來到輸入框模式
+2. 先輸入一租大括號 `{}`
+3. 移動遊標到中間，輸入你要綁定的組合鍵，然後用`,` 隔開 （基本上你輸入`KC_` 之後剩下他都會提示你
+
+最後把macro key設定到layout上就可以愉快的使用了  
+![macro3](../assets/macos-with-custom-keyboard/macro3.png)
+
+他還有一些進階用法，就靠各位自己研究了  
+
 ## 結語
 
 經過以上調教 基本上你在`MacOS`上使用體驗會舒服蠻多  
@@ -154,13 +184,6 @@ A.
 - [點我看 一般鍵位](https://github.com/qmk/libqmk/blob/master/include/qmk/keycodes/basic.h)
 - [點我看 特殊鍵位](https://github.com/qmk/libqmk/blob/master/include/qmk/keycodes/quantum.h)
 
-### Q: 如何設定 Marco(巨集)
-
-A. ↓
-
-> 如果你知道我是誰 直接 DM 我 DC 我手把手教你  
-> 如果你不知道我是誰 就自己看[Youtube](https://www.youtube.com/watch?v=aKQH09xxWEU)吧  
-> 解釋需要的篇幅比較長 我就懶得解釋了 QQ
 
 ### Q: 如何預設是 Function Row 則不是媒體鍵
 
