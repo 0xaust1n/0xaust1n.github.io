@@ -29,6 +29,15 @@
   </url>
   
   <url>
+    <loc>https://0xaust1n.github.io/how-to-lube/</loc>
+    
+    <lastmod>2026-02-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://0xaust1n.github.io/switch-git-account/</loc>
     
     <lastmod>2026-02-03</lastmod>
@@ -41,15 +50,6 @@
     <loc>https://0xaust1n.github.io/macos-with-custom-keyboard/</loc>
     
     <lastmod>2025-04-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://0xaust1n.github.io/how-to-lube/</loc>
-    
-    <lastmod>2023-11-14</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -74,6 +74,13 @@
   </url>
   
   <url>
+    <loc>https://0xaust1n.github.io/categories/Tech/</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://0xaust1n.github.io/categories/Life/Gibberish/</loc>
     <lastmod>2026-02-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -81,7 +88,7 @@
   </url>
   
   <url>
-    <loc>https://0xaust1n.github.io/categories/Tech/</loc>
+    <loc>https://0xaust1n.github.io/categories/Tech/Hexo/</loc>
     <lastmod>2026-02-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -96,20 +103,6 @@
   
   <url>
     <loc>https://0xaust1n.github.io/categories/Tech/Git/</loc>
-    <lastmod>2026-02-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://0xaust1n.github.io/categories/Tech/Hexo/</loc>
-    <lastmod>2026-02-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://0xaust1n.github.io/categories/Keebs/Lube/</loc>
     <lastmod>2026-02-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
