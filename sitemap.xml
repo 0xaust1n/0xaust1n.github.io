@@ -4,7 +4,7 @@
   <url>
     <loc>https://0xaust1n.github.io/categories/index.html</loc>
     
-    <lastmod>2025-05-21</lastmod>
+    <lastmod>2026-02-03</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -13,7 +13,7 @@
   <url>
     <loc>https://0xaust1n.github.io/intro/</loc>
     
-    <lastmod>2025-05-21</lastmod>
+    <lastmod>2026-02-03</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -22,7 +22,7 @@
   <url>
     <loc>https://0xaust1n.github.io/how-to-hexo/</loc>
     
-    <lastmod>2025-05-21</lastmod>
+    <lastmod>2026-02-03</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -31,7 +31,7 @@
   <url>
     <loc>https://0xaust1n.github.io/switch-git-account/</loc>
     
-    <lastmod>2025-05-21</lastmod>
+    <lastmod>2026-02-03</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -58,7 +58,7 @@
 
   <url>
     <loc>https://0xaust1n.github.io/</loc>
-    <lastmod>2025-05-21</lastmod>
+    <lastmod>2026-02-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -68,49 +68,49 @@
   
   <url>
     <loc>https://0xaust1n.github.io/categories/Life/</loc>
-    <lastmod>2025-05-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://0xaust1n.github.io/categories/Tech/</loc>
-    <lastmod>2025-05-21</lastmod>
+    <lastmod>2026-02-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://0xaust1n.github.io/categories/Life/Gibberish/</loc>
-    <lastmod>2025-05-21</lastmod>
+    <lastmod>2026-02-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://0xaust1n.github.io/categories/Tech/Hexo/</loc>
-    <lastmod>2025-05-21</lastmod>
+    <loc>https://0xaust1n.github.io/categories/Tech/</loc>
+    <lastmod>2026-02-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://0xaust1n.github.io/categories/Keebs/</loc>
-    <lastmod>2025-05-21</lastmod>
+    <lastmod>2026-02-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://0xaust1n.github.io/categories/Tech/Git/</loc>
-    <lastmod>2025-05-21</lastmod>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://0xaust1n.github.io/categories/Tech/Hexo/</loc>
+    <lastmod>2026-02-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://0xaust1n.github.io/categories/Keebs/Lube/</loc>
-    <lastmod>2025-05-21</lastmod>
+    <lastmod>2026-02-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
