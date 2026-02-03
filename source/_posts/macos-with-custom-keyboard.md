@@ -170,4 +170,4 @@ A. ↓
 
 ### Q: 我的問題不在 FAQ 怎麼辦
 
-![我不知道](https://truth.bahamut.com.tw/s01/202009/9e28a95a8967a458c273b93aca873b93.GIF)
+![我不知道](../assets/macos-with-custom-keyboard/i-dot-kow.gif)
