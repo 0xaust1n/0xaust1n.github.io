@@ -5,7 +5,7 @@
 # Site
 title: "Austin'Blog"
 subtitle: ""
-description: ""
+description: "Austin's blog about keyboards, macOS, Git, and dev tooling"
 keywords:
 author: "Austin"
 language: en
@@ -111,3 +111,4 @@ deploy:
 # https://github.com/hexojs/hexo-generator-sitemap
 sitemap:
   path: sitemap.xml
+  rel: true
