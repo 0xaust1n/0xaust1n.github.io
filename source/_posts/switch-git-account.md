@@ -1,6 +1,7 @@
 ---
 title: Multi-Github accounts through terminal
 date: 2022-07-31 03:17:40
+description: "How to manage multiple GitHub accounts on one machine using SSH config and gitconfig"
 categories:
   - [Tech, Git]
 ---
