@@ -2,6 +2,7 @@
 title: 怎麼潤軸? 潤軸小講堂
 date: 2023-08-30 18:40:40
 updated: 2026-02-03 15:00:00
+description: "客製化鍵盤潤軸教學 - Switch lubrication tutorial for custom mechanical keyboards"
 categories:
   - [Keebs, Lube]
 ---
