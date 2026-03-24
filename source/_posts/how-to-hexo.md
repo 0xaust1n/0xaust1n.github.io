@@ -1,6 +1,7 @@
 ---
 title: The details that didn't mention in Hexo's docs
 date: 2022-07-17 17:40:40
+description: "Tips and details for deploying Hexo to GitHub Pages that the official docs don't cover"
 categories:
   - [Tech, Hexo]
 ---
