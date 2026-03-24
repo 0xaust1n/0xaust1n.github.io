@@ -4,7 +4,8 @@ date: 2025-04-17 23:34:00
 updated: 2026-02-03 23:34:00
 categories:
   - [Keebs]
-keyword: Mac改鍵, 客製化鍵盤
+keywords: Mac改鍵, 客製化鍵盤
+description: "MacOS 客製化鍵盤設定教學 - 使用 VIA 解決 Mac 與自定義鍵盤的相容性問題"
 ---
 
 ## Intro
