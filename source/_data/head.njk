@@ -1,0 +1,8 @@
+{% if page.keywords %}
+<meta name="keywords" content="{{ page.keywords }}">
+{% elif config.keywords %}
+<meta name="keywords" content="{{ config.keywords | join(', ') }}">
+{% endif %}
+{% if page.path and (page.path.startsWith('archives/') or page.path.startsWith('tags/') or (page.path.startsWith('categories/') and page.path != 'categories/index.html')) %}
+<meta name="robots" content="noindex,follow">
+{% endif %}

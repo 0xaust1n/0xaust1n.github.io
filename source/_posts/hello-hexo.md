@@ -1,7 +1,9 @@
 ---
 title: Hello Hexo
 date: 2022-07-16 17:40:40
+lang: en
 description: "Introduction to Austin's blog - from Docusaurus to Hexo"
+keywords: Hexo, blog, introduction, Docusaurus
 categories:
   - [Life,Gibberish]
 permalink: intro/

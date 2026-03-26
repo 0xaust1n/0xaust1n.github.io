@@ -7,9 +7,15 @@ title: "Austin'Blog"
 subtitle: ""
 description: "Austin's blog about keyboards, macOS, Git, and dev tooling"
 keywords:
+  - Austin
+  - blog
+  - keyboards
+  - macOS
+  - Git
+  - Hexo
 author: "Austin"
 language: en
-timezone: ""
+timezone: Asia/Taipei
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -42,7 +48,7 @@ filename_case: 0
 render_drafts: false
 post_asset_folder: false
 relative_link: false
-future: true
+future: false
 highlight:
   enable: true
   line_number: true
@@ -81,7 +87,7 @@ meta_generator: true
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
 ## updated_option supports 'mtime', 'date', 'empty'
-updated_option: "mtime"
+updated_option: "date"
 
 # Pagination
 ## Set per_page to 0 to disable pagination
@@ -112,3 +118,5 @@ deploy:
 sitemap:
   path: sitemap.xml
   rel: true
+  tags: false
+  categories: false
