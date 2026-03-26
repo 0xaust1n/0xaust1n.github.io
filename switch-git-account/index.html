@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"0xaust1n.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.23.0","exturl":true,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js" defer></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"0xaust1n.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="How to manage multiple GitHub accounts on one machine using SSH config and gitconfig">
 <meta property="og:type" content="article">
@@ -28,9 +28,15 @@
 <meta property="og:site_name" content="Austin&#39;Blog">
 <meta property="og:description" content="How to manage multiple GitHub accounts on one machine using SSH config and gitconfig">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-07-31T03:17:40.000Z">
-<meta property="article:modified_time" content="2026-03-24T05:56:39.072Z">
+<meta property="article:published_time" content="2022-07-30T19:17:40.000Z">
+<meta property="article:modified_time" content="2022-07-30T19:17:40.000Z">
 <meta property="article:author" content="Austin">
+<meta property="article:tag" content="Austin">
+<meta property="article:tag" content="blog">
+<meta property="article:tag" content="keyboards">
+<meta property="article:tag" content="macOS">
+<meta property="article:tag" content="Git">
+<meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary">
 
 
@@ -64,6 +70,10 @@
   
 
 
+
+
+
+<meta name="keywords" content="GitHub, git config, SSH, multiple accounts">
 
 
 
@@ -204,14 +214,7 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2022-07-31 03:17:40" itemprop="dateCreated datePublished" datetime="2022-07-31T03:17:40+00:00">2022-07-31</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2026-03-24 05:56:39" itemprop="dateModified" datetime="2026-03-24T05:56:39+00:00">2026-03-24</time>
+      <time title="Created: 2022-07-31 03:17:40" itemprop="dateCreated datePublished" datetime="2022-07-31T03:17:40+08:00">2022-07-31</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -241,7 +244,7 @@
 <span id="more"></span>
 
 <h1 id="Prepare"><a href="#Prepare" class="headerlink" title="Prepare"></a>Prepare</h1><ul>
-<li><span class="exturl" data-url="aHR0cHM6Ly9jbGkuZ2l0aHViLmNvbS8=">Github CLI<i class="fa fa-external-link-alt"></i></span></li>
+<li><a target="_blank" rel="noopener" href="https://cli.github.com/">Github CLI</a></li>
 <li>Any Text Editor </li>
 <li>Nice terminal</li>
 </ul>
@@ -275,7 +278,7 @@
 <p>Put the below content into the <code>config.yml</code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># What protocol to use when performing git operations. Supported values: ssh, https</span><br><span class="line">git_protocol: ssh</span><br><span class="line">aliases:</span><br><span class="line">  personal: &quot;!cp ~/.config/gh/hosts.yml.personal ~/.config/gh/hosts.yml &amp;&amp; gh auth status&quot;</span><br><span class="line">  work: &quot;!cp ~/.config/gh/hosts.yml.work ~/.config/gh/hosts.yml &amp;&amp; gh auth status&quot;</span><br></pre></td></tr></table></figure>
 
-<p>Put the below content into the <code>host.yml.&lt;suffix&gt;</code> with suffix.<br>Each suffix stands for a different account.<br><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLmdpdGh1Yi5jb20vZW4vYXV0aGVudGljYXRpb24va2VlcGluZy15b3VyLWFjY291bnQtYW5kLWRhdGEtc2VjdXJlL2NyZWF0aW5nLWEtcGVyc29uYWwtYWNjZXNzLXRva2Vu">Docs for GitHub personal token<i class="fa fa-external-link-alt"></i></span></p>
+<p>Put the below content into the <code>host.yml.&lt;suffix&gt;</code> with suffix.<br>Each suffix stands for a different account.<br><a target="_blank" rel="noopener" href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">Docs for GitHub personal token</a></p>
 <blockquote>
 <p>Remeber check <strong>all</strong> the checkbox when you creating the Github personal token  </p>
 </blockquote>
@@ -343,7 +346,6 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gh auth setup-git</span><br></pre></td></tr></table></figure>
 
 
-
     </div>
 
     
@@ -389,7 +391,7 @@
     </span>
     <span class="author" itemprop="copyrightHolder">Austin</span>
   </div>
-  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
 
     </div>
