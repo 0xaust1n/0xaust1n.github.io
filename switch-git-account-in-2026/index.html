@@ -73,7 +73,7 @@
 
 
 
-<meta name="keywords" content="GitHub CLI, git config, includeIf, multiple accounts, SSH, HTTPS">
+<meta name="keywords" content="GitHub CLI, git config, includeIf, multiple accounts, HTTPS">
 
 
 
@@ -139,7 +139,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Intro"><span class="nav-number">1.</span> <span class="nav-text">Intro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What-changed-from-the-old-version"><span class="nav-number">2.</span> <span class="nav-text">What changed from the old version</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step-by-step-setup"><span class="nav-number">3.</span> <span class="nav-text">Step by step setup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-gitconfig"><span class="nav-number">4.</span> <span class="nav-text">Example .gitconfig</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-gitconfig-personal"><span class="nav-number">5.</span> <span class="nav-text">Example ~&#x2F;.gitconfig.personal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-gitconfig-work"><span class="nav-number">6.</span> <span class="nav-text">Example ~&#x2F;.gitconfig.work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GitHub-CLI-multi-account-setup"><span class="nav-number">7.</span> <span class="nav-text">GitHub CLI multi-account setup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-verify-it-works"><span class="nav-number">8.</span> <span class="nav-text">How to verify it works</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TL-DR"><span class="nav-number">9.</span> <span class="nav-text">TL;DR</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Intro"><span class="nav-number">1.</span> <span class="nav-text">Intro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What-changed-from-the-old-version"><span class="nav-number">2.</span> <span class="nav-text">What changed from the old version</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-identity-vs-GitHub-auth"><span class="nav-number">3.</span> <span class="nav-text">Git identity vs GitHub auth</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step-by-step-setup"><span class="nav-number">4.</span> <span class="nav-text">Step by step setup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-gitconfig"><span class="nav-number">5.</span> <span class="nav-text">Example .gitconfig</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-gitconfig-personal"><span class="nav-number">6.</span> <span class="nav-text">Example ~&#x2F;.gitconfig.personal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-gitconfig-work"><span class="nav-number">7.</span> <span class="nav-text">Example ~&#x2F;.gitconfig.work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GitHub-CLI-multi-account-setup"><span class="nav-number">8.</span> <span class="nav-text">GitHub CLI multi-account setup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-verify-it-works"><span class="nav-number">9.</span> <span class="nav-text">How to verify it works</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TL-DR"><span class="nav-number">10.</span> <span class="nav-text">TL;DR</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -243,7 +243,7 @@
 <blockquote>
 <p><strong>Main idea still same:</strong><br><strong>- let Git switch commit identity by folder</strong><br><strong>- let GitHub CLI handle GitHub login state</strong>  </p>
 </blockquote>
-<p>So Let’s go, config int</p>
+<p>So Let’s go.</p>
 <span id="more"></span>
 
 <h2 id="What-changed-from-the-old-version"><a href="#What-changed-from-the-old-version" class="headerlink" title="What changed from the old version"></a>What changed from the old version</h2><blockquote>
@@ -267,6 +267,15 @@
 <li>no need to create a personal token of each github account</li>
 <li>use <code>gh auth switch</code> to switch account</li>
 </ul>
+<h2 id="Git-identity-vs-GitHub-auth"><a href="#Git-identity-vs-GitHub-auth" class="headerlink" title="Git identity vs GitHub auth"></a>Git identity vs GitHub auth</h2><p>This part is important.<br>People mix this up all the time.  </p>
+<p><code>user.name</code> and <code>user.email</code><br>is your commit identity.  </p>
+<p><code>gh auth login</code> &#x2F; <code>gh auth switch</code><br>is your GitHub account login state.  </p>
+<p>These are not same thing.  </p>
+<p>If commit email is wrong,<br>go check <code>.gitconfig</code></p>
+<p>If <code>gh</code> command is using wrong account,<br>go check:  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gh auth status</span><br></pre></td></tr></table></figure>
+
+<p>Now you know, ezpz.  </p>
 <h2 id="Step-by-step-setup"><a href="#Step-by-step-setup" class="headerlink" title="Step by step setup"></a>Step by step setup</h2><p>First, decide your folder layout.</p>
 <p>I use something like this:</p>
 <ul>
@@ -292,8 +301,7 @@
 
 <p>Do it again for N-1 times if you got another account:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gh auth login</span><br></pre></td></tr></table></figure>
-
-<p>Usually it opens abrowser login.<br>That is fine.<br>It also tries to use secure credential storage.<br>Also fine.<br>Much better than me hand editing token files.</p>
+<p>Usually it opens abrowser login.<br>Remember to Copy the code from the terminal,<br>I was confuse at first, When I saw the github website require me input some code..</p>
 <p>Check current active account:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gh auth status</span><br></pre></td></tr></table></figure>
 
@@ -327,8 +335,6 @@
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ~/.gitconfig.work</span></span><br><span class="line"><span class="section">[user]</span></span><br><span class="line">  <span class="attr">name</span> = Austin</span><br><span class="line">  <span class="attr">email</span> = austin@company.com</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gh auth login</span><br><span class="line">gh auth status</span><br><span class="line">gh auth switch</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gh auth setup-git</span><br></pre></td></tr></table></figure>
 
     </div>
 
