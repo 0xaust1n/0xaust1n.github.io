@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "hexo generate",
+    "theme:apply": "sh tools/apply-next-overrides.sh",
+    "build": "yarn theme:apply && hexo generate",
     "clean": "hexo clean",
-    "deploy": "hexo clean && hexo deploy",
-    "dev": "hexo server",
+    "deploy": "yarn theme:apply && hexo clean && hexo deploy",
+    "dev": "yarn theme:apply && hexo server",
     "themes": "git submodule update --remote"
   },
   "hexo": {

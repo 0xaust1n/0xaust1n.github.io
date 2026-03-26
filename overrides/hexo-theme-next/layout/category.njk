@@ -1,0 +1,31 @@
+{% extends '_layout.njk' %}
+{% import '_macro/sidebar.njk' as sidebar_template with context %}
+
+{% block title %}{{ __('title.category') }}: {{ page.category }} | {{ title }}{% endblock %}
+
+{% block class %}category posts-expand{% endblock %}
+
+{% block content %}
+
+  <div class="post-block">
+    <div class="post-content">
+      <div class="collection-title">
+        <h1 class="collection-header">
+          {{- page.category }}
+          <small>{{ __('title.category') }}</small>
+        </h1>
+      </div>
+    </div>
+  </div>
+
+  {%- for post in page.posts.toArray() %}
+    {{ partial('_macro/post.njk', {post: post, is_index: true}) }}
+  {%- endfor %}
+
+  {%- include '_partials/pagination.njk' -%}
+
+{% endblock %}
+
+{% block sidebar %}
+  {{ sidebar_template.render(false) }}
+{% endblock %}
