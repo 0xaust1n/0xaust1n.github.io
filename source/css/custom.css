@@ -1,0 +1,7 @@
+#footer {
+  background-color: var(--global-bg) !important;
+}
+
+#footer::before {
+  background-color: transparent !important;
+}
