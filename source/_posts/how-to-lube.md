@@ -4,7 +4,7 @@ date: 2023-08-30 18:40:40
 updated: 2026-02-03 15:00:00
 lang: zh-TW
 description: "客製化鍵盤潤軸教學 - Switch lubrication tutorial for custom mechanical keyboards"
-keywords: 潤軸, 客製化鍵盤, 軸體, 鍵盤教學
+keywords: 潤軸, 客製化鍵盤, 怎麼潤軸, 潤軸教學
 categories:
   - [Keebs, Lube]
 ---

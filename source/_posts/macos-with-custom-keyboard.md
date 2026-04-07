@@ -1,11 +1,11 @@
 ---
-title: MacOS 客製化鍵盤的正確打開放式
+title: MacOS 客製化鍵盤的正確打開放方式
 date: 2025-04-17 23:34:00
 updated: 2026-02-03 23:34:00
 lang: zh-TW
 categories:
   - [Keebs]
-keywords: Mac改鍵, 客製化鍵盤
+keywords: Mac改鍵, 客製化鍵盤, Mac VIA
 description: "MacOS 客製化鍵盤設定教學 - 使用 VIA 解決 Mac 與自定義鍵盤的相容性問題"
 ---
 
