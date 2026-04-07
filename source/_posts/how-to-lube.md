@@ -3,18 +3,13 @@ title: 怎麼潤軸? 潤軸小講堂
 date: 2023-08-30 18:40:40
 updated: 2026-02-03 15:00:00
 lang: zh-TW
-description: "客製化鍵盤潤軸教學 - Switch lubrication tutorial for custom mechanical keyboards"
+description: "客製化鍵盤潤軸教學：工具清單、潤彈簧、潤軸心、壓軸速潤技巧與常見問題"
 keywords: 潤軸, 客製化鍵盤, 怎麼潤軸, 潤軸教學
 categories:
   - [Keebs, Lube]
 ---
 
 ## Intro
-
-This article is about switch lubrication tutorials.  
-If you're looking for English verison, it is not available yet.  
-
-
 
 潤軸只是輔助 軸爛的話 建議直接丟了  
 本篇會持續更新跟修正 再麻煩多多回來光顧了  
