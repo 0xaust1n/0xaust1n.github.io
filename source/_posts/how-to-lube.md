@@ -5,6 +5,9 @@ updated: 2026-02-03 15:00:00
 lang: zh-TW
 description: "客製化鍵盤潤軸教學：工具清單、潤彈簧、潤軸心、壓軸速潤技巧與常見問題"
 keywords: 潤軸, 客製化鍵盤, 怎麼潤軸, 潤軸教學
+tags:
+  - Keyboard
+  - Lube
 categories:
   - [Keebs, Lube]
 ---
