@@ -1,0 +1,208 @@
+# --------------------------------------
+# Butterfly Theme Configuration
+# Dark mode only
+# --------------------------------------
+
+nav:
+  logo:
+  display_title: true
+  display_post_title: true
+  fixed: false
+
+menu:
+  Home: / || fas fa-home
+  Archives: /archives/ || fas fa-archive
+  Categories: /categories/ || fas fa-folder-open
+
+code_blocks:
+  theme: darker
+  macStyle: true
+  height_limit: false
+  word_wrap: false
+  copy: true
+  language: true
+  shrink: false
+  fullpage: false
+
+social:
+  fab fa-github: https://github.com/0xaust1n || Github || '#24292e'
+
+favicon: /img/favicon.png
+
+avatar:
+  img: https://github.com/0xaust1n.png
+  effect: false
+
+disable_top_img: true
+
+cover:
+  index_enable: false
+  aside_enable: false
+  archives_enable: false
+
+post_meta:
+  page:
+    date_type: created
+    date_format: date
+    categories: true
+    tags: false
+    label: true
+  post:
+    position: left
+    date_type: both
+    date_format: date
+    categories: true
+    tags: true
+    label: true
+
+# Index page
+index_layout: 3
+index_post_content:
+  method: 2
+  length: 500
+
+# Post
+toc:
+  post: true
+  page: false
+  number: true
+  expand: false
+  style_simple: false
+  scroll_percent: true
+
+post_copyright:
+  enable: true
+  decode: false
+  license: CC BY-NC-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+reward:
+  enable: false
+
+related_post:
+  enable: true
+  limit: 6
+  date_type: created
+
+post_pagination: 1
+
+# Footer
+footer:
+  nav:
+  owner:
+    enable: true
+    since: 2022
+  copyright:
+    enable: true
+    version: false
+  custom_text:
+
+# Aside
+aside:
+  enable: true
+  hide: false
+  button: true
+  mobile: true
+  position: right
+  display:
+    archive: true
+    tag: true
+    category: true
+  card_author:
+    enable: true
+    description: Keebs / macOS / Dev
+    button:
+      enable: true
+      icon: fab fa-github
+      text: Follow Me
+      link: https://github.com/0xaust1n
+  card_announcement:
+    enable: false
+  card_recent_post:
+    enable: true
+    limit: 5
+    sort: date
+  card_newest_comments:
+    enable: false
+  card_categories:
+    enable: true
+    limit: 8
+    expand: none
+  card_tags:
+    enable: true
+    limit: 20
+    color: true
+    orderby: random
+    order: 1
+  card_archives:
+    enable: false
+  card_webinfo:
+    enable: false
+
+# Dark mode - force dark only
+darkmode:
+  enable: true
+  button: false
+  autoChangeMode: false
+
+# Force dark mode default
+display_mode: dark
+
+# Readmode
+readmode: true
+
+# No background effects
+canvas_ribbon:
+  enable: false
+canvas_fluttering_ribbon:
+  enable: false
+canvas_nest:
+  enable: false
+fireworks:
+  enable: false
+
+# Misc
+copy:
+  enable: true
+  copyright:
+    enable: false
+
+wordcount:
+  enable: false
+
+busuanzi:
+  site_uv: false
+  site_pv: false
+  page_pv: false
+
+# SEO
+site_verification:
+  - name: google-site-verification
+    content: psJOb46reXDo68vba5L18OAYCXwxKS34qECByhQpd3U
+
+Open_Graph_meta:
+  enable: true
+  option:
+
+# Performance
+lazyload:
+  enable: true
+  native: true
+  field: site
+
+pjax:
+  enable: false
+
+instantpage: true
+
+css_prefix: true
+
+inject:
+  head:
+    - <link rel="stylesheet" href="/css/custom.css">
+  bottom:
+
+CDN:
+  internal_provider: local
+  third_party_provider: jsdelivr
+  version: true

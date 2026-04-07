@@ -4,6 +4,9 @@ date: 2022-07-17 17:40:40
 lang: en
 description: "Tips and details for deploying Hexo to GitHub Pages that the official docs don't cover"
 keywords: Hexo, GitHub Pages, deployment, submodule
+tags:
+  - Hexo
+  - GitHub Pages
 categories:
   - [Tech, Hexo]
 ---

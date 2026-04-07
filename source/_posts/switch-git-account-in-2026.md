@@ -4,6 +4,10 @@ date: 2026-03-26 15:30:00
 lang: en
 description: "How I handle personal and work GitHub accounts in 2026 with git includeIf and GitHub CLI"
 keywords: GitHub CLI, git config, includeIf, multiple accounts, HTTPS
+tags:
+  - Git
+  - GitHub
+  - GitHub CLI
 categories:
   - [Tech, Git]
 ---

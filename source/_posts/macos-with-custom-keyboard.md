@@ -3,6 +3,10 @@ title: MacOS 客製化鍵盤的正確打開放方式
 date: 2025-04-17 23:34:00
 updated: 2026-02-03 23:34:00
 lang: zh-TW
+tags:
+  - macOS
+  - Keyboard
+  - VIA
 categories:
   - [Keebs]
 keywords: Mac改鍵, 客製化鍵盤, Mac VIA

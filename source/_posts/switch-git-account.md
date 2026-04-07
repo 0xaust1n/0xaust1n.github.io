@@ -4,6 +4,10 @@ date: 2022-07-31 03:17:40
 lang: en
 description: "How to manage multiple GitHub accounts on one machine using SSH config and gitconfig"
 keywords: GitHub, git config, SSH, multiple accounts
+tags:
+  - Git
+  - GitHub
+  - SSH
 categories:
   - [Tech, Git]
 ---
