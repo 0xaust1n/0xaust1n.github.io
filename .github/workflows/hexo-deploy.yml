@@ -3,7 +3,7 @@ name: Build and Deploy Hexo Blog
 on:
   push:
     branches:
-      - main # Set this to your default branch
+      - main
 
 jobs:
   build-and-deploy:
@@ -11,20 +11,20 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
-          submodules: "recursive" # Fetch theme submodules if any
+          submodules: "recursive"
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: "18" # Use Node.js 18 or your preferred version
+          node-version: "20"
 
       - name: Install Yarn
         run: npm install -g yarn
 
       - name: Cache Yarn dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.cache/yarn
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
@@ -36,7 +36,7 @@ jobs:
 
       - name: Replace Google verification with secret
         run: |
-          sed -i "s/google_site_verification:.*/google_site_verification: ${{ secrets.GOOGLE_SITE_VERIFICATION }}/" _config.next.yml
+          sed -i "s/google_site_verification:.*/google_site_verification: ${{ secrets.GOOGLE_SITE_VERIFICATION }}/" _config.butterfly.yml
 
       - name: Build Hexo Site
         run: |
@@ -52,5 +52,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          publish_branch: gh-pages # The branch where your site is deployed
+          publish_branch: gh-pages
           commit_message: "feat: update blogs to v.${{ env.DEPLOY_DATE }}"
