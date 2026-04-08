@@ -2,12 +2,15 @@
   "name": "hexo-site",
   "version": "0.0.0",
   "private": true,
+  "packageManager": "pnpm@10.17.1",
   "scripts": {
     "theme:apply": "sh tools/apply-next-overrides.sh",
-    "build": "yarn theme:apply && hexo generate",
-    "clean": "hexo clean",
-    "deploy": "yarn theme:apply && hexo clean && hexo deploy",
-    "dev": "yarn theme:apply && hexo server",
+    "theme:watch": "pnpm exec chokidar \"overrides/**/*\" \"tools/apply-next-overrides.sh\" -i \"**/.DS_Store\" --debounce 200 -c \"pnpm run theme:apply\"",
+    "build": "pnpm run theme:apply && pnpm exec hexo generate",
+    "clean": "pnpm exec hexo clean",
+    "deploy": "pnpm run theme:apply && pnpm exec hexo clean && pnpm exec hexo deploy",
+    "dev:hexo": "pnpm exec hexo server",
+    "dev": "pnpm run theme:apply && pnpm exec concurrently -k -n HEXO,OVERRIDES -c cyan,yellow \"pnpm run dev:hexo\" \"pnpm run theme:watch\"",
     "themes": "git submodule update --remote"
   },
   "hexo": {
@@ -29,5 +32,9 @@
     "hexo-theme-butterfly": "^5.5.4",
     "hexo-theme-landscape": "^0.0.3",
     "hexo-theme-next": "^8.23.0"
+  },
+  "devDependencies": {
+    "chokidar-cli": "^3.0.0",
+    "concurrently": "^9.2.1"
   }
 }
