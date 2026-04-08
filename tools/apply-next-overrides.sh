@@ -2,16 +2,18 @@
 
 set -eu
 
-SRC_DIR="overrides/hexo-theme-next"
-DST_DIR="node_modules/hexo-theme-next"
+find overrides -mindepth 1 -maxdepth 1 -type d | while IFS= read -r src_dir; do
+  theme_name=$(basename "$src_dir")
+  dst_dir="node_modules/$theme_name"
 
-if [ ! -d "$SRC_DIR" ] || [ ! -d "$DST_DIR" ]; then
-  exit 0
-fi
+  if [ ! -d "$dst_dir" ]; then
+    continue
+  fi
 
-find "$SRC_DIR" -type f | while IFS= read -r src_file; do
-  rel_path=${src_file#"$SRC_DIR"/}
-  dst_file="$DST_DIR/$rel_path"
-  mkdir -p "$(dirname "$dst_file")"
-  cp "$src_file" "$dst_file"
+  find "$src_dir" -type f | while IFS= read -r src_file; do
+    rel_path=${src_file#"$src_dir"/}
+    dst_file="$dst_dir/$rel_path"
+    mkdir -p "$(dirname "$dst_file")"
+    cp "$src_file" "$dst_file"
+  done
 done
