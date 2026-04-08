@@ -25,7 +25,7 @@ code_blocks:
   fullpage: false
 
 social:
-  fab fa-github: https://github.com/0xaust1n || Github || '#24292e'
+  fa-brands fa-github: https://github.com/0xaust1n || Github || '#FFFFFFF'
 
 favicon: /img/favicon-v1.png
 
@@ -112,8 +112,8 @@ aside:
     enable: true
     description: Keebs / macOS / Dev
     button:
-      enable: true
-      icon: fab fa-github
+      enable: false
+      icon: fa-brands fa-github
       text: Follow Me
       link: https://github.com/0xaust1n
   card_announcement:
