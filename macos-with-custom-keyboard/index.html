@@ -1,0 +1,262 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>MacOS 客製化鍵盤的正確打開放方式 | Austin'Blog</title><meta name="author" content="Austin"><meta name="copyright" content="Austin"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="MacOS 客製化鍵盤設定教學 - 使用 VIA 解決 Mac 與自定義鍵盤的相容性問題">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MacOS 客製化鍵盤的正確打開放方式">
+<meta property="og:url" content="https://blog.0xaust1n.cc/macos-with-custom-keyboard/index.html">
+<meta property="og:site_name" content="Austin&#39;Blog">
+<meta property="og:description" content="MacOS 客製化鍵盤設定教學 - 使用 VIA 解決 Mac 與自定義鍵盤的相容性問題">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://github.com/0xaust1n.png">
+<meta property="article:published_time" content="2025-04-17T15:34:00.000Z">
+<meta property="article:modified_time" content="2026-02-03T15:34:00.000Z">
+<meta property="article:author" content="Austin">
+<meta property="article:tag" content="Keyboard">
+<meta property="article:tag" content="VIA">
+<meta property="article:tag" content="macOS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/0xaust1n.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "MacOS 客製化鍵盤的正確打開放方式",
+  "url": "https://blog.0xaust1n.cc/macos-with-custom-keyboard/",
+  "image": "https://github.com/0xaust1n.png",
+  "datePublished": "2025-04-17T15:34:00.000Z",
+  "dateModified": "2026-02-03T15:34:00.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Austin",
+      "url": "https://blog.0xaust1n.cc"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon-v1.png"><link rel="canonical" href="https://blog.0xaust1n.cc/macos-with-custom-keyboard/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><meta name="google-site-verification" content="psJOb46reXDo68vba5L18OAYCXwxKS34qECByhQpd3U"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'MacOS 客製化鍵盤的正確打開放方式',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://github.com/0xaust1n.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/ loading='lazy'></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Austin'Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">MacOS 客製化鍵盤的正確打開放方式</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首頁</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">MacOS 客製化鍵盤的正確打開放方式</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2025-04-17T15:34:00.000Z" title="發表於 2025-04-17 23:34:00">2025-04-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2026-02-03T15:34:00.000Z" title="更新於 2026-02-03 23:34:00">2026-02-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Keebs/">Keebs</a></span></div><div class="meta-secondline"></div></div></div><article class="container post-content" id="article-container"><h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h2><p>如果你已經習慣了<code>MacBook</code>上原生的鍵盤<br>換到客製化後可能會有許多問題需要克服<br>相信你很頭痛<br>但如果你的鍵盤支援 <code>VIA</code> 大部分問題都可以迎刃而解<br>我可以大概列出一些讓你頭痛的問題:</p>
+<span id="more"></span>
+
+<ul>
+<li>缺少 Apple 原生 fn (比如 function 效果的切換 F12 跟聲音控制)</li>
+<li>Win Alt 相反 (尤其是 Win&#x2F;MacOS 雙修的人)</li>
+<li>小配列鍵位不知道怎麼設定才順手 (比如 60%的上下左右&#x2F;65%的~鍵)</li>
+<li>甚至你在挑戰 60% 或是更小的配列</li>
+</ul>
+<p>我可以分享幾點來解決你的痛點<br>甚至可以說這篇是 <code>VIA</code> 詳細的使用說明<br>希望這篇文可以讓你一次征服所有痛點</p>
+<h2 id="鍵位調配"><a href="#鍵位調配" class="headerlink" title="鍵位調配"></a>鍵位調配</h2><p>要讓設定舒服有一個前提，就是你的打字姿勢是要標準的 <strong>越標準越吃香</strong><br><code>VIA</code> 可以將 Layout 拆成好幾層<br>我們這次主要會調整<code>Layer1</code>， <code>Layer0</code>有些小調整</p>
+<p>Layer0 設定範例:<br><img src="/../assets/macos-with-custom-keyboard/1.png" alt="VIA Layout" loading='lazy'><br>首先我們把<code>MO(1)</code>丟到<code>Capslock</code>的位置<br>如果你很常用<code>Capslock</code><br>請在 Special 分頁裡面找到<code>Any</code><br>輸入:</p>
+<blockquote>
+<p>LT(1,KC_CAPS)</p>
+</blockquote>
+<p>這樣就變成長按進到<code>Layer1</code>， 短按就是 Capslock</p>
+<p>Layer1 範例設定(請依照自己的習慣調整):<br><img src="/../assets/macos-with-custom-keyboard/2.png" alt="VIA Layout" loading='lazy'></p>
+<ol>
+<li>首先請無視 M1 M2 M3..這些鍵 (這些是我設定的巨集鍵 下面會展開)</li>
+<li>上下左右可以設定在 WASD&#x2F;IJKL 看你是左撇子還是右撇子</li>
+<li>Function 鍵全部會設定在<code>1~=</code>鍵 剛剛對應到 12 個</li>
+<li>65%以下的話 <code>~</code>鍵我習慣放在 Q 因為我蠻常用</li>
+<li>剩下是我寫 Code 常用的按鍵</li>
+</ol>
+<p>這樣設定好處是 我可以用我小指去壓著 <code>Capslock</code><br>這樣鍵盤就會進入<code>Layer1</code> 左手單手就可以控制上下左右<br>我右手也不需要移動<br>當然你要先習慣用左手控制這一切，如果你比較習慣放右邊也不是不行<br>缺點就是雙手要協調 不然就是要改<code>MO(1)</code>的位置<br>目標就一個字 懶<br>就要懶到一個極致 XD</p>
+<h2 id="WIN-ALT-對調"><a href="#WIN-ALT-對調" class="headerlink" title="WIN ALT 對調"></a>WIN ALT 對調</h2><p>對於非雙系統雙修的人類<br>我們可以簡單粗暴的直接在<code>Layer0</code><br>把<code>WIN</code>,<code>ALT</code>對調<br>再優雅一點的話 需要設定 2 顆<code>any</code> 你可以放在任何地方</p>
+<blockquote>
+<p>0x5C04<br>0x5C0D</p>
+</blockquote>
+<p><code>0x5C04</code> 是<code>左邊ALT</code> 跟 <code>左邊WIN</code>對調<br><code>0x5C0D</code> 則是對調回來<br>注意是 左邊！ 左邊！ 左邊！<br>如果要左右對調 或是 對調右邊， 請參考<a target="_blank" rel="noopener" href="https://github.com/qmk/libqmk/blob/master/include/qmk/keycodes/quantum.h">這裡</a></p>
+<blockquote>
+<p>注意有些 PCB 不支援一鍵對調 那你就只能直接改鍵對調了</p>
+</blockquote>
+<h2 id="大魔王-APPLE-FN"><a href="#大魔王-APPLE-FN" class="headerlink" title="大魔王 APPLE FN"></a>大魔王 APPLE FN</h2><p>如果你不用 Apple 的媒體鍵(比如調亮度 聲音)<br>或是不用 Function Row<br>那你就可以跳過這一題了<br>但如果你好死不死，兩個都用得很頻繁<br>那就需要依靠一個程式來解決了</p>
+<ol start="0">
+<li><p>設定一顆 <code>Right CTRL</code> 在空格右邊那顆 或是任何你喜歡的位置</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://karabiner-elements.pqrs.org/">安裝 Karabiner-Elements</a></p>
+</li>
+<li><p>他 Karabiner 需要的權限全開(他應該會提示你權限不足)</p>
+</li>
+<li><p>到 Device 把你鍵盤的 Modify-Event 打開<br>(一把鍵盤可能會有多個 你可以全開)</p>
+</li>
+</ol>
+<p><img src="/../assets/macos-with-custom-keyboard/4.png" alt="modify-event" loading='lazy'></p>
+<ol start="4">
+<li>(非必要) 到 Function Keys 稍微調整一下映射 你也可以直接照抄我的</li>
+</ol>
+<p><img src="/../assets/macos-with-custom-keyboard/5.png" alt="function-keys" loading='lazy'></p>
+<ol start="5">
+<li>取代所以鍵盤<code>Right CTRL</code> 或是你任何用不到的鍵</li>
+</ol>
+<p><img src="/../assets/macos-with-custom-keyboard/6.png" alt="function-keys" loading='lazy'></p>
+<p>這樣只要<code>Right CTRL</code> + <code>Capslock</code> + <code>1~=</code> 就可以觸發 Apple 任何媒體鍵了</p>
+<blockquote>
+<p>如果沒反應代表以上步驟你有漏的 或是權限沒開<br>常見是 Driver Extension 這邊沒開</p>
+</blockquote>
+<p><img src="/../assets/macos-with-custom-keyboard/7.png" alt="driver extension" loading='lazy'></p>
+<h2 id="Bouns-time-巨集-宏"><a href="#Bouns-time-巨集-宏" class="headerlink" title="Bouns time 巨集(宏)"></a>Bouns time 巨集(宏)</h2><p>VIA還有一個很強大的功能就是Macro<br><del>由於他不是通過系統安裝軟體觸發的 可能可以繞過一些反作弊</del><br>我只分享我自己的使用情景：  </p>
+<ol>
+<li>輸入密碼  </li>
+<li>組合鍵  (e.g.: 輸入法切換，叫出terminal)</li>
+</ol>
+<blockquote>
+<p>注意1: macro會因為pcb記憶體的差別影響可以設定數量跟內容長度 所以不算是一個非常穩定功能<br>注意2: 藍牙會導致macro不穩定，比如密碼只幫你輸入一半 等問題…  </p>
+</blockquote>
+<p>先講設定密碼<br><img src="/../assets/macos-with-custom-keyboard/macro1.png" alt="macro1" loading='lazy'></p>
+<ol>
+<li>來到Macro的分頁</li>
+<li>選擇你要對應macro key(m0~m15 數字可能會多會少 看PCB)</li>
+<li>切到輸入框模式</li>
+<li>直接輸入你的密碼</li>
+</ol>
+<p>再來講設定組合鍵<br><img src="/../assets/macos-with-custom-keyboard/macro2.png" alt="macro2" loading='lazy'></p>
+<ol>
+<li>一樣來到輸入框模式</li>
+<li>先輸入一租大括號 <code>{}</code></li>
+<li>移動遊標到中間，輸入你要綁定的組合鍵，然後用<code>,</code> 隔開 （基本上你輸入<code>KC_</code> 之後剩下他都會提示你</li>
+</ol>
+<p>最後把macro key設定到layout上就可以愉快的使用了<br><img src="/../assets/macos-with-custom-keyboard/macro3.png" alt="macro3" loading='lazy'></p>
+<p>他還有一些進階用法，就靠各位自己研究了  </p>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>經過以上調教 基本上你在<code>MacOS</code>上使用體驗會舒服蠻多<br>但有些需要一些時間習慣<br>希望這篇文章有幫到你 解決你的頭痛<br>如果你的鍵盤不支援<code>VIA</code><br>趕快買一把客製化來改善你的 Work Flow 吧<br><code>VIA</code>絕對是客製化最爽的地方<br>而且所有設定是存在 PCB 的記憶體裡<br>今天不管你換到哪一臺電腦 插上即用 <strong>阿斯阿斯</strong></p>
+<h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><h3 id="Q-VIA-連不上怎麼辦"><a href="#Q-VIA-連不上怎麼辦" class="headerlink" title="Q: VIA 連不上怎麼辦"></a>Q: VIA 連不上怎麼辦</h3><p>A. Debug 順序如下</p>
+<blockquote>
+<p>換瀏覽器或是電腦版 &gt; 換條線 &gt; 開啟或關閉 V2 &gt; 換 JSON &gt; <del>再買一把</del></p>
+</blockquote>
+<h3 id="Q-VIA-怎麼改鍵"><a href="#Q-VIA-怎麼改鍵" class="headerlink" title="Q: VIA 怎麼改鍵"></a>Q: VIA 怎麼改鍵</h3><p>A. 找到你要改的鍵 點一下， 然後再下方尋找你要替換的鍵<br>慢慢找 沒有捷徑 多翻幾次就記得了 XD</p>
+<h3 id="Q-LT-1-KC-CAPS-有什麼用"><a href="#Q-LT-1-KC-CAPS-有什麼用" class="headerlink" title="Q: LT(1,KC_CAPS) 有什麼用?"></a>Q: LT(1,KC_CAPS) 有什麼用?</h3><p>A. LT 全稱叫<code>Tap Dance</code> 縮寫可能沒什麼關係<br>直接抄一個大哥的作業</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">LT(1,KC_CAPS): 按住切層mo(1),短按大寫鎖定</span><br><span class="line">LT(1,KC_RCTRL):按住切層mo(1),短按R_ctrl</span><br><span class="line">LT(2,KC_F5):按住切層mo(2),短按F5</span><br></pre></td></tr></table></figure>
+
+<p><del>shout out to my babe HHHHW</del></p>
+<h3 id="Q-Hexcode-對照表呢？"><a href="#Q-Hexcode-對照表呢？" class="headerlink" title="Q: Hexcode 對照表呢？"></a>Q: Hexcode 對照表呢？</h3><p>A.<br>當你設定<code>Any</code>鍵的時候 你會感謝有他</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/qmk/libqmk/blob/master/include/qmk/keycodes/basic.h">點我看 一般鍵位</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/qmk/libqmk/blob/master/include/qmk/keycodes/quantum.h">點我看 特殊鍵位</a></li>
+</ul>
+<h3 id="Q-如何預設是-Function-Row-則不是媒體鍵"><a href="#Q-如何預設是-Function-Row-則不是媒體鍵" class="headerlink" title="Q: 如何預設是 Function Row 則不是媒體鍵"></a>Q: 如何預設是 Function Row 則不是媒體鍵</h3><p>A. ↓<br><img src="/../assets/macos-with-custom-keyboard/3.png" alt="function-keys" loading='lazy'><br><strong>反之亦然</strong></p>
+<h3 id="Q-我的問題不在-FAQ-怎麼辦"><a href="#Q-我的問題不在-FAQ-怎麼辦" class="headerlink" title="Q: 我的問題不在 FAQ 怎麼辦"></a>Q: 我的問題不在 FAQ 怎麼辦</h3><p><img src="/../assets/macos-with-custom-keyboard/i-dot-kow.gif" alt="我不知道" loading='lazy'></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://blog.0xaust1n.cc">Austin</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章連結: </span><span class="post-copyright-info"><a href="https://blog.0xaust1n.cc/macos-with-custom-keyboard/">https://blog.0xaust1n.cc/macos-with-custom-keyboard/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版權聲明: </span><span class="post-copyright-info">本部落格所有文章除特別聲明外，均採用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 授權協議。轉載請註明來源 <a href="https://blog.0xaust1n.cc" target="_blank">Austin'Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Keyboard/">Keyboard</a><a class="post-meta__tags" href="/tags/macOS/">macOS</a><a class="post-meta__tags" href="/tags/VIA/">VIA</a></div><div class="post-share"><div class="social-share" data-image="https://github.com/0xaust1n.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/switch-git-account-in-2026/" title="Multi-Github accounts through terminal in 2026"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">Multi-Github accounts through terminal in 2026</div></div><div class="info-2"><div class="info-item-1">How I handle personal and work GitHub accounts in 2026 with git includeIf and GitHub CLI</div></div></div></a><a class="pagination-related" href="/how-to-lube/" title="怎麼潤軸? 潤軸小講堂"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">怎麼潤軸? 潤軸小講堂</div></div><div class="info-2"><div class="info-item-1">客製化鍵盤潤軸教學：工具清單、潤彈簧、潤軸心、壓軸速潤技巧與常見問題</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相關推薦</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/how-to-lube/" title="怎麼潤軸? 潤軸小講堂"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-30</div><div class="info-item-2">怎麼潤軸? 潤軸小講堂</div></div><div class="info-2"><div class="info-item-1">客製化鍵盤潤軸教學：工具清單、潤彈簧、潤軸心、壓軸速潤技巧與常見問題</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://github.com/0xaust1n.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/ loading='lazy'></div><div class="author-info-name">Austin</div><div class="author-info-description">Keebs / macOS / Dev</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/0xaust1n" target="_blank" title="Github"><i class="fa-brands fa-github" style="color: #FFFFFFF;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目錄</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Intro"><span class="toc-number">1.</span> <span class="toc-text">Intro</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%8D%B5%E4%BD%8D%E8%AA%BF%E9%85%8D"><span class="toc-number">2.</span> <span class="toc-text">鍵位調配</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WIN-ALT-%E5%B0%8D%E8%AA%BF"><span class="toc-number">3.</span> <span class="toc-text">WIN ALT 對調</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E9%AD%94%E7%8E%8B-APPLE-FN"><span class="toc-number">4.</span> <span class="toc-text">大魔王 APPLE FN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bouns-time-%E5%B7%A8%E9%9B%86-%E5%AE%8F"><span class="toc-number">5.</span> <span class="toc-text">Bouns time 巨集(宏)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B5%90%E8%AA%9E"><span class="toc-number">6.</span> <span class="toc-text">結語</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FAQ"><span class="toc-number">7.</span> <span class="toc-text">FAQ</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-VIA-%E9%80%A3%E4%B8%8D%E4%B8%8A%E6%80%8E%E9%BA%BC%E8%BE%A6"><span class="toc-number">7.1.</span> <span class="toc-text">Q: VIA 連不上怎麼辦</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-VIA-%E6%80%8E%E9%BA%BC%E6%94%B9%E9%8D%B5"><span class="toc-number">7.2.</span> <span class="toc-text">Q: VIA 怎麼改鍵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-LT-1-KC-CAPS-%E6%9C%89%E4%BB%80%E9%BA%BC%E7%94%A8"><span class="toc-number">7.3.</span> <span class="toc-text">Q: LT(1,KC_CAPS) 有什麼用?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-Hexcode-%E5%B0%8D%E7%85%A7%E8%A1%A8%E5%91%A2%EF%BC%9F"><span class="toc-number">7.4.</span> <span class="toc-text">Q: Hexcode 對照表呢？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-%E5%A6%82%E4%BD%95%E9%A0%90%E8%A8%AD%E6%98%AF-Function-Row-%E5%89%87%E4%B8%8D%E6%98%AF%E5%AA%92%E9%AB%94%E9%8D%B5"><span class="toc-number">7.5.</span> <span class="toc-text">Q: 如何預設是 Function Row 則不是媒體鍵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-%E6%88%91%E7%9A%84%E5%95%8F%E9%A1%8C%E4%B8%8D%E5%9C%A8-FAQ-%E6%80%8E%E9%BA%BC%E8%BE%A6"><span class="toc-number">7.6.</span> <span class="toc-text">Q: 我的問題不在 FAQ 怎麼辦</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/switch-git-account-in-2026/" title="Multi-Github accounts through terminal in 2026">Multi-Github accounts through terminal in 2026</a><time datetime="2026-03-26T07:30:00.000Z" title="Created 2026-03-26 15:30:00">2026-03-26</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/macos-with-custom-keyboard/" title="MacOS 客製化鍵盤的正確打開放方式">MacOS 客製化鍵盤的正確打開放方式</a><time datetime="2025-04-17T15:34:00.000Z" title="Created 2025-04-17 23:34:00">2025-04-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/how-to-lube/" title="怎麼潤軸? 潤軸小講堂">怎麼潤軸? 潤軸小講堂</a><time datetime="2023-08-30T10:40:40.000Z" title="Created 2023-08-30 18:40:40">2023-08-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/switch-git-account/" title="Multi-Github accounts through terminal">Multi-Github accounts through terminal</a><time datetime="2022-07-30T19:17:40.000Z" title="Created 2022-07-31 03:17:40">2022-07-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/how-to-hexo/" title="The details that didn't mention in Hexo's docs">The details that didn't mention in Hexo's docs</a><time datetime="2022-07-17T09:40:40.000Z" title="Created 2022-07-17 17:40:40">2022-07-17</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2022 - 2026 By Austin</span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="閱讀模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="單欄和雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到頂端"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><div class="js-pjax"></div></div></body></html>
