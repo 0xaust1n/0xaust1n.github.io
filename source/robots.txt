@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://blog.0xaust1n.cc/sitemap.xml
 Sitemap: https://0xaust1n.github.io/sitemap.xml
