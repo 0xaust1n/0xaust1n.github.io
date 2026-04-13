@@ -6,9 +6,9 @@
   "scripts": {
     "theme:apply": "sh tools/apply-next-overrides.sh",
     "theme:watch": "pnpm exec chokidar \"overrides/**/*\" \"tools/apply-next-overrides.sh\" -i \"**/.DS_Store\" --debounce 200 -c \"pnpm run theme:apply\"",
-    "build": "pnpm run theme:apply && pnpm exec hexo generate",
+    "build": "pnpm run theme:apply && pnpm exec hexo generate && touch public/.nojekyll",
     "clean": "pnpm exec hexo clean",
-    "deploy": "pnpm run theme:apply && pnpm exec hexo clean && pnpm exec hexo deploy",
+    "deploy": "pnpm run theme:apply && pnpm exec hexo clean && pnpm run build && pnpm exec hexo deploy",
     "dev:hexo": "pnpm exec hexo server",
     "dev": "pnpm run theme:apply && pnpm exec concurrently -k -n HEXO,OVERRIDES -c cyan,yellow \"pnpm run dev:hexo\" \"pnpm run theme:watch\"",
     "themes": "git submodule update --remote"
