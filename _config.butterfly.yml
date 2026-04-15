@@ -184,6 +184,12 @@ Open_Graph_meta:
   enable: true
   option:
 
+structured_data:
+  enable: true
+  alternate_name:
+    - Austin Blog
+    - 0xAust1n Blog
+
 # Performance
 lazyload:
   enable: true
