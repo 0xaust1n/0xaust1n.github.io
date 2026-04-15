@@ -5,3 +5,23 @@
 #footer::before {
   background-color: transparent !important;
 }
+
+#article-container img,
+.post-content img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+
+.post-deprecation-notice {
+  margin: 0 0 1.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(255, 184, 0, 0.35);
+  border-radius: 16px;
+  background: rgba(255, 184, 0, 0.08);
+}
+
+.post-deprecation-notice strong {
+  display: inline-block;
+  margin-bottom: 0.35rem;
+}
