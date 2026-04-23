@@ -11,6 +11,10 @@ if theme.structured_data && theme.structured_data.enable
       const authorHrefVal = page.copyright_author_href || theme.post_copyright.author_href || config.url
       const authorHref = full_url_for(authorHrefVal)
       const categoryItems = page.categories ? page.categories.toArray() : []
+      const categoryNames = categoryItems.map(category => category.name).filter(Boolean)
+      const keywordItems = [...new Set((page.keywords ? String(page.keywords).split(',') : [])
+        .map(keyword => keyword.trim())
+        .filter(Boolean))]
       const breadcrumbItems = [{
         "@type": "ListItem",
         "position": 1,
@@ -53,6 +57,9 @@ if theme.structured_data && theme.structured_data.enable
           "itemListElement": breadcrumbItems
         }]
       }
+
+      if (keywordItems.length) jsonLd["@graph"][0].keywords = keywordItems
+      if (categoryNames.length) jsonLd["@graph"][0].articleSection = categoryNames.join('/')
 
       jsonLdScript = JSON.stringify(jsonLd, null, 2)
     -
