@@ -97,6 +97,7 @@ pagination_dir: page
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
 include:
+  - _headers # Cloudflare Pages header rules; underscore files are skipped unless listed here
 exclude:
 ignore:
 
